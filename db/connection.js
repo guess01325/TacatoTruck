@@ -6,7 +6,7 @@ let MONGODB_URI =
 
 // mongoose.set('debug', true)
 
-mongoose.set('useCreateIndex', true)
+// mongoose.set('useCreateIndex', true)
 
 mongoose.set('returnOriginal', false)
 
