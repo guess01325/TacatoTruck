@@ -1,17 +1,8 @@
-<<<<<<< HEAD
-import './MenuItemCreate.css'
-import { useState } from 'react'
-import { Layout } from '../../components/Layout/Layout'
-import { Redirect } from 'react-router-dom'
-import { createMenuItem } from '../../services/menuItems'
-
-=======
 import "./MenuItemCreate.css";
 import { useState } from "react";
 import Layout from "../../components/Layout/Layout";
 import { Redirect } from "react-router-dom";
 import { createMenuItem } from "../../services/menuItems";
->>>>>>> 55abfe60f422dc103751cfde88c204eab25f2872
 
 function MenuItemCreate(props) {
   const [menuItem, setMenuItem] = useState({
