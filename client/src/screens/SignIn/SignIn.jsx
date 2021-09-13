@@ -1,7 +1,8 @@
 import './SignIn.css'
 import { useState } from 'react'
 import { signIn } from "../../services/users"
-import {useHistory} from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
+import Layout from "../../components/Layout/Layout";
 
 function SignIn(props) {
 
@@ -61,6 +62,7 @@ const onSignIn = async (event) => {
 
 
   return (
+    <Layout user={props.user}>
     <div className='signin-form'>
       <h1>Sign In</h1>
       <form onSubmit={onSignIn}>
@@ -82,7 +84,8 @@ const onSignIn = async (event) => {
         />
         {renderError()}
     </form>
-    </div>
+      </div>
+      </Layout>
   )
 }
 
