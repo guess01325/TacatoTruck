@@ -13,11 +13,17 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
   },
   menuButton: {
-    marginRight: theme.spacing(2),
+    marginLeft: theme.spacing(2),
+    width: 80,
   },
   title: {
+    textAlign: "left",
     flexGrow: 1,
+    fontSize: 32,
   },
+  titleImage: {
+    width: 80,
+  }
 }));
 
 const authenticatedOptions = (
@@ -65,12 +71,13 @@ const Nav = ({ user }) => {
         <AppBar position="static">
           <Toolbar>
             <img
+              className={classes.titleImage}
               src="https://res.cloudinary.com/dy6xpqkkj/image/upload/v1631555532/Tactato%20Truck/taco-cat-removebg-preview_sasawz.png"
               alt="taco cat"
             />
             <Typography variant="h6" className={classes.title}>
-              <NavLink className="logo" to="/">
-                Tacato Truck
+              <NavLink className="title" to="/">
+                <span className="titleYellow">T</span><span className="titleRed">a</span><span className="titleGreen">c</span><span className="titleTortilla">a</span><span className="titleYellow">t</span><span className="titleRed">o</span> <span className="titleGreen">T</span><span className="titleTortilla">r</span><span className="titleYellow">u</span><span className="titleRed">c</span><span className="titleGreen">k</span>
               </NavLink>
             </Typography>
             <div className="links">
@@ -80,14 +87,17 @@ const Nav = ({ user }) => {
               {alwaysOptions}
               {user ? authenticatedOptions : unauthenticatedOptions}
             </div>
-            <IconButton
+            {/* <IconButton
               edge="start"
               className={classes.menuButton}
               color="inherit"
               aria-label="menu"
             >
               <MenuIcon />
-            </IconButton>
+            </IconButton> */}
+            <Button>
+              <img className={classes.menuButton} src="https://res.cloudinary.com/dy6xpqkkj/image/upload/v1631547003/Tactato%20Truck/clipart775400_vxiz46.png" alt="truck side menu" />
+            </Button>
           </Toolbar>
         </AppBar>
       </div>
