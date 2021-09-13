@@ -5,7 +5,7 @@ import HomeTacos from "../../components/HomeTacos/HomeTacos";
 function Home(props) {
   return (
     <>
-      {/* <Layout user={props.user}> */}
+      <Layout user={props.user}>
       <img src="" alt="taco table"></img>
       <h1>Our Mission</h1>
       <article>
@@ -22,7 +22,7 @@ function Home(props) {
       <img src="" alt="cat"></img>
       <h1>The Cat's Mewow</h1>
       <HomeTacos />
-      {/* </Layout> */}
+     </Layout>
     </>
   );
 }
