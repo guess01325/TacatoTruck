@@ -28,10 +28,10 @@ function App() {
         <Route exact path="/">
           <Home user={user} />
         </Route>
-        <Route path="/menu">
+        <Route exact path="/menu">
           <Menu user={user} />
         </Route>
-        <Route path="/menu/:id">
+        <Route exact path="/menu/:id">
           {user ? (
             <MenuItemDetailEdit user={user} />
           ) : (
