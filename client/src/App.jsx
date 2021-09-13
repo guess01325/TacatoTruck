@@ -10,6 +10,7 @@ import MenuItemDetailEdit from "./screens/MenuItemDetailEdit/MenuItemDetailEdit"
 import MenuItemCreate from "./screens/MenuItemCreate/MenuItemCreate";
 import Menu from "./screens/Menu/Menu";
 import Home from "./screens/Home/Home";
+import "@fontsource/roboto";
 
 function App() {
   const [user, setUser] = useState(null);
