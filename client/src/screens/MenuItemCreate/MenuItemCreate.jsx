@@ -1,6 +1,6 @@
 import './MenuItemCreate.css'
 import { useState } from 'react'
-// import { Layout } from '../../components/Layout'
+import { Layout } from '../../components/Layout/Layout'
 import { Redirect } from 'react-router-dom'
 import { createMenuItem } from '../../services/menuItems'
 
@@ -38,7 +38,7 @@ function MenuItemCreate(props) {
   return (
     <>
       <h1>Create A Taco</h1>
-      {/* <Layout user={props.user}> */}
+      <Layout user={props.user}>
       <form className="createItem-form" onSubmit={handleSubmit}>
         <input
           className='create-name'
