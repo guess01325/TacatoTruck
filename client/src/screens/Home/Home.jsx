@@ -1,5 +1,6 @@
 import "./Home.css";
 // import { Layout } from "../../components";
+import HomeTacos from "../../components/HomeTacos/HomeTacos";
 
 function Home(props) {
   return (
@@ -10,7 +11,7 @@ function Home(props) {
       <article>
         TaCato Truck was founded by four amazing full stack software engineers.
         Driving their success is their love for tacos, and their passion for
-        partnering with the
+        partnering with the{" "}
         <a
           href="https://www.aspca.org/adopt-pet/adoptable-cats-your-local-shelter"
           target="_blank"
@@ -20,7 +21,7 @@ function Home(props) {
       </article>
       <img src="" alt="cat"></img>
       <h1>The Cat's Mewow</h1>
-      <img src="" alt="carousel placeholder"></img>
+      <HomeTacos />
       {/* </Layout> */}
     </>
   );
