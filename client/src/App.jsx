@@ -10,6 +10,7 @@ import MenuItemDetailEdit from "./screens/MenuItemDetailEdit/MenuItemDetailEdit"
 import MenuItemCreate from "./screens/MenuItemCreate/MenuItemCreate";
 import Menu from "./screens/Menu/Menu";
 import Home from "./screens/Home/Home";
+import "@fontsource/roboto";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -28,10 +29,10 @@ function App() {
         <Route exact path="/">
           <Home user={user} />
         </Route>
-        <Route path="/menu">
+        <Route exact path="/menu">
           <Menu user={user} />
         </Route>
-        <Route path="/menu/:id">
+        <Route exact path="/menu/:id">
           {user ? (
             <MenuItemDetailEdit user={user} />
           ) : (
