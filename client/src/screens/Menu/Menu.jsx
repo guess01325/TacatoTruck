@@ -2,10 +2,10 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { getMenuItems } from "../../services/menuItems";
 import "./Menu.css";
-// import { Layout } from "../../components";
+import Layout from "../../components/Layout/Layout";
 import MenuItem from "../../components/MenuItem/MenuItem.jsx";
 
-function Menu() {
+function Menu(props) {
   const [menu, setMenu] = useState([]);
 
   useEffect(() => {
@@ -17,23 +17,23 @@ function Menu() {
   }, []);
 
   return (
-    // <Layout user={props.user}>
-    <div className="items">
-      {menu.map((menuItem, index) => {
-        return (
-          <Link to="/menu/:id">
-            <MenuItem
-              imgURL={menuItem.imgURL}
-              name={menuItem.name}
-              price={menuItem.price}
-              ingredients={menuItem.ingredients}
-              key={index}
-            />
-          </Link>
-        );
-      })}
-    </div>
-    // </Layout>
+    <Layout user={props.user}>
+      <div className="items">
+        {menu.map((menuItem, index) => {
+          return (
+            <Link to="/menu/:id">
+              <MenuItem
+                imgURL={menuItem.imgURL}
+                name={menuItem.name}
+                price={menuItem.price}
+                ingredients={menuItem.ingredients}
+                key={index}
+              />
+            </Link>
+          );
+        })}
+      </div>
+    </Layout>
   );
 }
 
