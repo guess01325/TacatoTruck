@@ -9,6 +9,8 @@ const useStyles = makeStyles((theme) => ({
   appBar: {
     top: "auto",
     bottom: 0,
+    fontFamily: "Ranchers, cursive",
+    color: "#E7AF00"
   },
   octoCat: {
     width: 60,
@@ -19,7 +21,7 @@ function Footer() {
   const classes = useStyles();
   return (
     <footer>
-      <AppBar position="fixed" color="primary" className={classes.appBar}>
+      <AppBar position="fixed" color="secondary" className={classes.appBar}>
         <Toolbar>
           <a href="https://github.com/Nafff">
             <img
