@@ -19,7 +19,7 @@ function MenuItemCreate(props) {
     setMenuItem({
       ...menuItem,
       [name]: value,
-    });
+    })
   };
 
   const handleSubmit = async (event) => {
@@ -64,9 +64,9 @@ function MenuItemCreate(props) {
           <input
             className="create-link"
             placeholder="Link"
-            required
             value={menuItem.imgURL}
-            name="link"
+            name="imgURL"
+            required
             onChange={handleChange}
           />
           <button type="submit" className="create-submit-button">
