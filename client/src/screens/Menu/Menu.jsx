@@ -21,7 +21,7 @@ function Menu(props) {
       <div className="items">
         {menu.map((menuItem, index) => {
           return (
-            <Link to="/menu/:id">
+            <Link to={`/menu/${menuItem._id}`}>
               <MenuItem
                 imgURL={menuItem.imgURL}
                 name={menuItem.name}
