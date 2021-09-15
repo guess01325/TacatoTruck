@@ -9,6 +9,7 @@ import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
 import Paper from "@material-ui/core/Paper";
+import { ButtonGroup } from "@material-ui/core";
 
 const useStyles = makeStyles({
   root: {
@@ -22,9 +23,9 @@ const useStylesGrid = makeStyles((theme) => ({
     margin: 32,
   },
   gridPaper: {
-    padding: theme.spacing(2),
+    padding: theme.spacing(5),
     textAlign: "center",
-    color: theme.palette.text.secondary,
+    backgroundColor: "#8C9267",
   },
 }));
 
@@ -58,12 +59,15 @@ function MenuItem(props) {
                 </CardContent>
               </CardActionArea>
               <CardActions>
-                <Button size="small" color="primary">
-                  Modify
-                </Button>
-                <Button size="small" color="primary">
-                  Order Meow
-                </Button>
+                <ButtonGroup
+                  orientation="vertical"
+                  aria-label="vertical contained primary button group"
+                  variant="contained"
+                  justifyContent="center"
+                >
+                  <Button size="small">Modify</Button>
+                  <Button size="small">Order Meow</Button>
+                </ButtonGroup>
               </CardActions>
             </Card>
           </Paper>
