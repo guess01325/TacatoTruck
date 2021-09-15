@@ -51,6 +51,81 @@ const insertData = async () => {
       price: "$981",
       ingredients: ["Cheese", "Lettuce", "Tomatoes", "BBQ Chicken Nuggets"],
     },
+    {
+      name: "Barbacoa Short Rib Tacato",
+      imgURL:
+        "https://images.unsplash.com/photo-1573521193826-58c7dc2e13e3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
+      price: "$3.95",
+      ingredients: [
+        "Cheese",
+        "Barbacoa Beef",
+        "Lettuce",
+        "Tomatoes",
+        "Cilantro",
+        "Onion",
+        "Avocado",
+      ],
+    },
+    {
+      name: "Tacatos Al Pastor",
+      imgURL:
+        "https://images.unsplash.com/photo-1573521193826-58c7dc2e13e3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
+      price: "$3.75",
+      ingredients: [
+        "Cheese",
+        "Pork Al Pastor",
+        "Lettuce",
+        "Tomatoes",
+        "Cilantro",
+        "Onion",
+        "Pineapple",
+      ],
+    },
+    {
+      name: "Mango Fish Tacato",
+      imgURL:
+        "https://images.unsplash.com/photo-1573521193826-58c7dc2e13e3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
+      price: "$3.95",
+      ingredients: [
+        "Cheese",
+        "Lettuce",
+        "Tilapia",
+        "Avocado",
+        "Jalepeño Slices",
+        "Mango",
+        "Cilantro",
+      ],
+    },
+    {
+      name: "Cheeseburger Tacato",
+      imgURL:
+        "https://images.unsplash.com/photo-1573521193826-58c7dc2e13e3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
+      price: "$3.75",
+      ingredients: [
+        "Cheese",
+        "Lettuce",
+        "Tomatoes",
+        "Ground Beef",
+        "Onion",
+        "BBQ Sauce",
+        "Pickles",
+        "Bacon",
+      ],
+    },
+    {
+      name: "Bacon and Queso Breakfast Tacato",
+      imgURL:
+        "https://images.unsplash.com/photo-1573521193826-58c7dc2e13e3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
+      price: "$3.25",
+      ingredients: [
+        "Cheese",
+        "Hash Brown Potatoes",
+        "Eggs",
+        "Bacon",
+        "Queso Blanco",
+        "Salsa",
+      ],
+    },
   ];
 
   // insert products into database
