@@ -13,10 +13,12 @@ const useStylesGrid = makeStyles((theme) => ({
   gridOurMission: {
     width: "50%",
     textAlign: "center",
+    minWidth: "300px",
   },
   carousel: {
     width: "50%",
     textAlign: "center",
+    minWidth: "300px",
   },
 }));
 
