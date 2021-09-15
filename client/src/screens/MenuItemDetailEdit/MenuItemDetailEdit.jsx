@@ -66,7 +66,7 @@ function MenuItemDetail(props) {
                 control={
                   <Checkbox
                     checked={ingredientsState[index]}
-                    onChange={handleOnChange}
+                    // onChange={handleOnChange(index)}
                     name={ingredient}
                   />
                 }
