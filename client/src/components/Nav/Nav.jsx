@@ -18,6 +18,7 @@ const useStyles = makeStyles((theme) => ({
     textAlign: "left",
     flexGrow: 1,
     fontSize: 32,
+    letterSpacing: ".2rem",
   },
   titleImage: {
     width: 80,
