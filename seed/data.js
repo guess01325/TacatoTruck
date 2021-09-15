@@ -62,3 +62,44 @@ const insertData = async () => {
 };
 
 insertData();
+
+
+
+{
+  name: "Tacato Sunrise",
+  imgURL:
+  "https://res.cloudinary.com/otisg/image/upload/v1631706682/TacatoSunrise_wm2opn.webp",
+   price: "$2.99",
+  ingredients: ["Scramble", "Fried Eggs", "Refried Beans", "cilantro", "Avocado", "Salsa", "Cotija Cheese", "Cheddar Cheese", "Sour Cream", "Diced Jalapenos"],
+},
+
+{
+  name: "Tacato Cat Delight",
+  imgURL:
+  "https://res.cloudinary.com/otisg/image/upload/v1631707242/ShrimpTaco_ok62kg.jpg",
+  price: "$3.99",
+  ingredients: ["Shrimp", "Chili Powder", "Smoky Chipotle", "Chili powder", "Taco Slaw", "Slaws Dressing" ],
+},
+
+{
+  name: "Tacato Steak & Pineapple",
+  imgURL:
+  "https://res.cloudinary.com/otisg/image/upload/v1631707987/steak_Pineapple_nfnrar.jpg",
+  price: "$2.99",
+  ingredients: ["Cheese", "Cilantro", "Green Onions", "Jalepeño Slices"],
+},
+
+{
+  name: "Tacato Chicken Delight",
+  imgURL:
+  "https://res.cloudinary.com/otisg/image/upload/v1631708333/ChickenTaco_gtgtln.jpg",
+  price: "$2.99",
+  ingredients: ["Chili Powder", "Garlick Powder", "Boneless Chicken Thighs", "Pico de Gallo","Lime wedges"],
+},
+
+{
+  name: "Tacato Cheese Cake Taco",
+  imgURL:
+  "https://res.cloudinary.com/otisg/image/upload/v1631708837/CheeseCakeTaco_wsuhlo.jpg",
+  price: "$3.50",
+  ingredients: ["Fried Crips, Graham Crumb Tortilla", "Cinnamon Sugar Dipped", "Cherry Pie Filling", "Cheese Cake", "Whip Cream"],
