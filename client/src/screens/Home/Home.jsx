@@ -18,6 +18,7 @@ const useStylesGrid = makeStyles((theme) => ({
     width: "50%",
     textAlign: "center"
   },
+
 }));
 
 function Home(props) {
@@ -35,7 +36,7 @@ function Home(props) {
             <Grid item m className={classesGrid.gridOurMission}>
               <Paper elevation={3}>
               <img
-                className="catInHat"
+                  className={classesGrid.catInHat}
                 src="https://res.cloudinary.com/dy6xpqkkj/image/upload/v1631547003/Tactato%20Truck/istockphoto-833450608-612x612-removebg-preview_ms3oez.png"
                 alt="cat"
               ></img>

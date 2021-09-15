@@ -3,27 +3,6 @@ import { useState } from "react";
 import { signIn } from "../../services/users";
 import { useHistory } from "react-router-dom";
 import Layout from "../../components/Layout/Layout";
-<<<<<<< HEAD
-import '@fontsource/roboto'
-import Button from '@mui/material/Button';
-import CssBaseline from '@mui/material/CssBaseline';
-import TextField from '@mui/material/TextField';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Checkbox from '@mui/material/Checkbox';
-import Link from '@mui/material/Link';
-import Grid from '@mui/material/Grid';
-import Box from '@mui/material/Box';
-
-import Typography from '@mui/material/Typography';
-import Container from '@mui/material/Container';
-
-export default function SignIn(props) {
-  
-
-  const history = useHistory()
-
-
-=======
 import Avatar from "@material-ui/core/Avatar";
 import Button from "@material-ui/core/Button";
 import CssBaseline from "@material-ui/core/CssBaseline";
@@ -39,7 +18,6 @@ import Typography from "@material-ui/core/Typography";
 
 function SignIn(props) {
   const history = useHistory();
->>>>>>> b2a6c73b7716d25fc991fc85999a328c7586156f
 
   const [form, setForm] = useState({
     email: "",
@@ -54,65 +32,6 @@ function SignIn(props) {
     setForm({
       ...form,
       [event.target.name]: event.target.value,
-<<<<<<< HEAD
-    })
-  }
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const data = new FormData(event.currentTarget);
-   
-    console.log({
-      email: data.get('email'),
-      password: data.get('password'),
-    });
-  
-    function Copyright(props) {
-      return (
-        <Typography variant="body2" color="text.secondary" align="center" {...props}>
-          {'Copyright © '}
-          <Link color="inherit" href="https://material-ui.com/">
-            Your Website
-          </Link>{' '}
-          {new Date().getFullYear()}
-          {'.'}
-        </Typography>
-      );
-    }
-
-    const onSignIn = async (event) => {
-      event.preventDefault()
-      const { setUser } = props
-      try {
-        const user = await signIn(form)
-        setUser(user)
-        history.push('/')
-      } catch (error) {
-        console.log("Error", error)
-        setForm({
-          email: '',
-          password: '',
-          isError: true,
-          errorMsg: 'Invalid Sign In Information'
-
-        })
-      }
-
-    
-    }
-  
-    const renderError = () => {
-      const toggleForm = form.isError ? 'danger' : ''
-      if (form.isError) {
-        return (
-          <button type='submit' className={toggleForm}>
-            {form.errorMsg}
-          </button>
-        )
-      } else {
-        return <button type='submit'>Sign In</button>
-      }
-    }
-=======
     });
   };
 
@@ -162,7 +81,6 @@ function SignIn(props) {
       );
     }
   };
->>>>>>> b2a6c73b7716d25fc991fc85999a328c7586156f
 
   function Copyright(props) {
     return (
@@ -182,25 +100,6 @@ function SignIn(props) {
     );
   }
 
-<<<<<<< HEAD
-    return (
-      <Layout user={props.user}>
-        <Container component="main" maxWidth="xs">
-          <CssBaseline />
-          <Box
-            sx={{
-              marginTop: 8,
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
-            }}
-          >
-           
-            <Typography component="h1" variant="h5">
-              Sign in
-            </Typography>
-            <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
-=======
   return (
     // <Layout user={props.user}>
     //   <div className="signin-form">
@@ -263,17 +162,13 @@ function SignIn(props) {
               Sign in
             </Typography>
             <Box component="form" noValidate onSubmit={onSignIn} sx={{ mt: 1 }}>
->>>>>>> b2a6c73b7716d25fc991fc85999a328c7586156f
               <TextField
                 margin="normal"
                 required
                 fullWidth
                 id="email"
-<<<<<<< HEAD
-=======
                 value={email}
                 onChange={handleChange}
->>>>>>> b2a6c73b7716d25fc991fc85999a328c7586156f
                 label="Email Address"
                 name="email"
                 autoComplete="email"
@@ -283,11 +178,8 @@ function SignIn(props) {
                 margin="normal"
                 required
                 fullWidth
-<<<<<<< HEAD
-=======
                 value={password}
                 onChange={handleChange}
->>>>>>> b2a6c73b7716d25fc991fc85999a328c7586156f
                 name="password"
                 label="Password"
                 type="password"
@@ -298,18 +190,7 @@ function SignIn(props) {
                 control={<Checkbox value="remember" color="primary" />}
                 label="Remember me"
               />
-<<<<<<< HEAD
-              <Button
-                type="submit"
-                fullWidth
-                variant="contained"
-                sx={{ mt: 3, mb: 2 }}
-              >
-                Sign In
-              </Button>
-=======
               {renderError()}
->>>>>>> b2a6c73b7716d25fc991fc85999a328c7586156f
               <Grid container>
                 <Grid item xs>
                   <Link href="#" variant="body2">
@@ -322,40 +203,6 @@ function SignIn(props) {
                   </Link>
                 </Grid>
               </Grid>
-<<<<<<< HEAD
-            </Box>
-          </Box>
-          {renderError()}
-          <Copyright sx={{ mt: 8, mb: 4 }} />
-        </Container>
-      </Layout>
-      // <div className='signin-form'>
-      //   <h1>Sign In</h1>
-      //   <form onSubmit={onSignIn}>
-      //     <label>Email</label>
-      //     <input
-      //       required
-      //       type='text'
-      //       name='email'
-      //       value={email}
-      //       placeholder='Enter Email'
-      //       onChange={handleChange}
-      //     />
-      //     <label>Password</label>
-      //     <input
-      //       required
-      //       name='password'
-      //       value={password}
-      //       onChange={handleChange}
-      //     />
-      //    
-      // </form>
-      //   </div>
-      // 
-    )
-  }
-}
-=======
               <Copyright sx={{ mt: 5 }} />
             </Box>
           </Box>
@@ -366,4 +213,3 @@ function SignIn(props) {
 }
 
 export default SignIn;
->>>>>>> b2a6c73b7716d25fc991fc85999a328c7586156f
