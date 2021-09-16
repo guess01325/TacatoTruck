@@ -2,12 +2,6 @@ import mongoose from "mongoose";
 const Schema = mongoose.Schema;
 
 const User = new Schema(
-  // {
-  //   username: { type: String, required: true },
-  //   email: { type: String, required: true },
-  //   password_digest: { type: String, required: true, select: false },
-  // },
-  // { timestamps: true }
   {
     username: {
       type: String,
@@ -17,8 +11,8 @@ const User = new Schema(
     },
     email: { type: String, required: true, match: /.+\@.+\..+/, unique: true },
     password_digest: { type: String, required: true, select: false },
-    products: [{ type: Schema.Types.ObjectId, ref: 'products' }],
-    cart: [{ type: Schema.Types.ObjectId, ref: 'products' }]
+    products: [{ type: Schema.Types.ObjectId, ref: 'menuItems' }],
+    cart: [{ type: Schema.Types.ObjectId, ref: 'menuItems' }]
   },
   { timestamps: true }
 );

@@ -91,6 +91,8 @@ const Nav = ({ user }) => {
     setDrawer(open);
   };
 
+  console.log(user)
+
   const list = () => (
     <div
       className={classes.list}
