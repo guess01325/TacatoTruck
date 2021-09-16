@@ -1,6 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Ranchers&display=swap");
 
+body,
+#root,
+.App {
+  height: 100%;
+}
+
+div.layout-children {
+  height: 100%;
+}
 .App {
   background-color: #ffd489;
-  height: 100vh;
 }

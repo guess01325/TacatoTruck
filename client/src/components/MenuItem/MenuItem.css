@@ -1,6 +1,13 @@
-.taco-img {
-  width: 160px;
-  height: 160px;
-  border: 2px solid;
-  color: orangered;
+@import url("https://fonts.googleapis.com/css2?family=Short+Stack&display=swap");
+
+#button-link {
+  background-color: #edb345;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+#order-button {
+  background-color: #ba0014;
+  margin-bottom: 20px;
+  box-shadow: #edb345;
 }

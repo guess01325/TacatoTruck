@@ -49,3 +49,12 @@ export const verifyUser = async () => {
   }
   return false
 }
+
+export const getUserMenuItem = async (userId, menuItemId) => {
+  try {
+    const response = await api.get(`/users/${userId}/menu/${menuItemId}`)
+    return response.data
+  } catch (error) {
+    throw error
+  }
+}
