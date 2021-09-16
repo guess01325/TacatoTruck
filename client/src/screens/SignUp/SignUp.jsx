@@ -119,50 +119,6 @@ function SignUp(props) {
   const { username, email, password, passwordConfirmation } = form;
 
   return (
-    // <Layout user={props.user}>
-    //   <div className="signup-form">
-    //     <h1> Sign Up</h1>
-    //     <form onSubmit={onSignUp}>
-    //       <label>Username</label>
-    //       <input
-    //         required
-    //         type="text"
-    //         name="username"
-    //         value={username}
-    //         placeholder="Enter username here"
-    //         onChange={handleChange}
-    //       />
-    //       <label>Email</label>
-    //       <input
-    //         required
-    //         type="text"
-    //         name="email"
-    //         value={email}
-    //         placeholder="Enter email here"
-    //         onChange={handleChange}
-    //       />
-    //       <label>Password</label>
-    //       <input
-    //         required
-    //         type="text"
-    //         name="password"
-    //         value={password}
-    //         placeholder="Enter password here"
-    //         onChange={handleChange}
-    //       />
-    //       <label>Password Confirmation</label>
-    //       <input
-    //         required
-    //         type="text"
-    //         name="passwordConfirmation"
-    //         value={passwordConfirmation}
-    //         placeholder="Confirm password"
-    //         onChange={handleChange}
-    //       />
-    //       {renderError()}
-    //     </form>
-    //   </div>
-    // </Layout>
     <Layout user={props.user}>
       <Grid container component="main" sx={{ height: "100vh" }}>
         <CssBaseline />

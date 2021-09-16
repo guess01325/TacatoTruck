@@ -15,6 +15,21 @@ import Box from "@material-ui/core/Box";
 import Grid from "@material-ui/core/Grid";
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import Typography from "@material-ui/core/Typography";
+import { makeStyles } from "@material-ui/core/styles";
+
+const useStylesGrid = makeStyles((theme) => ({
+  gridRoot: {
+    flexGrow: 1,
+    margin: 32,
+  },
+  signInCat: {
+    minWidth: "300px",
+
+  }
+
+}));
+
+
 
 function SignIn(props) {
   const history = useHistory();
@@ -100,34 +115,21 @@ function SignIn(props) {
     );
   }
 
+  const classesGrid = useStylesGrid();
   return (
-    // <Layout user={props.user}>
-    //   <div className="signin-form">
-    //     <h1>Sign In</h1>
-    //     <form onSubmit={onSignIn}>
-    //       <label>Email</label>
-    //       <input
-    //         required
-    //         type="text"
-    //         name="email"
-    //         value={email}
-    //         placeholder="Enter Email"
-    //         onChange={handleChange}
-    //       />
-    //       <label>Password</label>
-    //       <input
-    //         required
-    //         name="password"
-    //         value={password}
-    //         onChange={handleChange}
-    //       />
-    //       {renderError()}
-    //     </form>
-    //   </div>
-    // </Layout>
     <Layout user={props.user}>
-      <Grid container component="main" sx={{ height: "100vh" }}>
+      <Grid container component="main" sx={{ height: "100vh" }} direction="row">
         <CssBaseline />
+        <Grid item m className={classesGrid.signInCat}>
+          {/* <Paper elevation={3}> */}
+          <h1> Sign in </h1>
+            <img
+              className="catInHat"
+              src="https://res.cloudinary.com/dy6xpqkkj/image/upload/v1631547003/Tactato%20Truck/istockphoto-833450608-612x612-removebg-preview_ms3oez.png"
+              alt="cat"
+            ></img>
+          {/* </Paper> */}
+        </Grid>
         <Grid
           item
           xs={false}
