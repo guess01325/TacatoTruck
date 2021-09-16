@@ -2,7 +2,7 @@ import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 
 import User from "../models/user.js";
-import MenuItem from "../models/menuItem";
+import MenuItem from "../models/menuItem.js";
 
 const SALT_ROUNDS = process.env.SALT_ROUNDS || 12;
 const TOKEN_KEY = process.env.TOKEN_KEY || "areallytastytacokey";

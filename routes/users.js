@@ -8,10 +8,10 @@ router.post('/sign-in', controllers.signIn)
 router.get('/verify', controllers.verify)
 router.get('/users/:id', controllers.getUser)
 
-router.get('/users/:id/menu', controllers.getUserProducts)
-router.get('/users/:id/menu/:menuItemId', controllers.getUserProduct)
-router.post('/users/:id/menu', controllers.createUserProduct)
-router.put('/users/:id/menu/:menuItemId', controllers.updateUserProduct)
+router.get('/users/:id/menu', controllers.getUserMenuItems)
+router.get('/users/:id/menu/:menuItemId', controllers.getUserMenuItem)
+router.post('/users/:id/menu', controllers.createUserMenuItem)
+router.put('/users/:id/menu/:menuItemId', controllers.updateUserMenuItem)
 router.delete('/users/:id/menu/:menuItemId', controllers.deleteUserProduct)
 
 export default router

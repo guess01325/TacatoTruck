@@ -77,6 +77,7 @@ const alwaysOptions = (
 const Nav = ({ user }) => {
   const classes = useStyles();
   const [drawer, setDrawer] = useState(false);
+  const [cart, setCart] = useState([]);
 
   const toggleDrawer = (open) => (event) => {
     if (
@@ -153,7 +154,11 @@ const Nav = ({ user }) => {
                 alt="truck side menu"
               />
             </Button>
-            <Drawer anchor={"right"} open={drawer} onClose={toggleDrawer(false)}>
+            <Drawer
+              anchor={"right"}
+              open={drawer}
+              onClose={toggleDrawer(false)}
+            >
               {list()}
             </Drawer>
           </Toolbar>
