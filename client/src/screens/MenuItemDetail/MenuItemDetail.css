@@ -1,0 +1,103 @@
+
+
+
+
+
+.detail-container {
+    border-radius: 25px;
+    top: 65px;
+    display: flexbox;
+    width: auto;
+    height: 550px;
+   align-items: center;
+   position: relative;
+  margin-left: 450px;
+  margin-right: 450px;
+   text-align: center;
+   background-color: #9DA27A;
+  
+}
+
+.taco-detail-container{
+position: relative;
+
+display: flex;
+flex-direction: row;
+justify-content: space-evenly;
+/* background-color: #9DA27A; */
+align-items: center;
+width: auto;
+height: 350px;
+
+
+}
+
+.info-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 20px;
+    position: relative;
+    height: 350px;
+    top: 45px;
+    width: auto;
+    
+
+}
+
+.taco-detail-container img{
+width: 410px;
+height: 375px;
+padding: 0px 20px;
+margin-top: 130px;
+}
+
+
+
+
+
+
+.name {
+position: relative;
+right: 50px;
+bottom: 25px;
+font-size: 40px;
+color: aliceblue;
+font-family: 'Ranchers', cursive;
+}
+
+.price{
+    position: relative;
+right:50px;
+bottom: 25px;
+font-size: 20px;
+color: aliceblue;
+font-family: 'Ranchers', cursive;
+}
+
+.check-box{
+    font-family: 'Ranchers', cursive;
+    color: aliceblue;
+}
+
+
+
+@media all and (min-width: 375px) and (max-width: 816px) {
+   .info-container{
+       
+   }
+}
+
+@media all and (min-width:1750px) {
+
+
+    .name {
+        position: relative;
+        right: 50px;
+        bottom: 25px;
+        font-size: 20px;
+        color: aliceblue;
+        font-family: 'Ranchers', cursive;
+        }    
+}

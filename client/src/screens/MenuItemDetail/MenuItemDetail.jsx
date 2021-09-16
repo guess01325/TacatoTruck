@@ -6,17 +6,10 @@ import { getMenuItem } from "../../services/menuItems";
 import FormGroup from "@material-ui/core/FormGroup";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Checkbox from "@material-ui/core/Checkbox";
-
-const allIngredients = [
-  "Cheese",
-  "Lettuce",
-  "Tomatoes",
-  "BBQ Chicken Nuggets",
-  "Fish",
-  "Apples",
-  "Oreos",
-  "BBQ Chicken"
-];
+import allIngredients from "../../utils/ingredients";
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Ranchers&display=swap');
+</style>
 
 function MenuItemDetail(props) {
   const [item, setItem] = useState(null);
@@ -25,7 +18,7 @@ function MenuItemDetail(props) {
   const [ingredientsState, setIngredientsState] = useState(
     new Array(allIngredients.length).fill(false)
   );
-
+  console.log(ingredientsState);
   useEffect(() => {
     const fetchItem = async () => {
       const item = await getMenuItem(id);
@@ -39,36 +32,46 @@ function MenuItemDetail(props) {
     return <h1>Loading...</h1>;
   }
 
-  item.ingredients.map((ingredient) => {
-    const index = allIngredients.indexOf(ingredient)
-    ingredientsState[index] = true 
-  })
-
+  // item.ingredients.map((ingredient) => {
+  //   const index = allIngredients.indexOf(ingredient);
+  //   ingredientsState[index] = true;
+  // });
+  const handleChange = (index) => {
+    const currentArray = ingredientsState;
+    const newState = !ingredientsState[index]
+    currentArray.splice(index, 1, newState);
+    setIngredientsState([...currentArray]);
+  };
   return (
     <Layout user={props.user}>
-      <div>
-        <h1>This is the menu item detail</h1>
-        <img className="item-1" src={item.imgURL} alt={item.name} />
-        <div className="name">{item.name}</div>
-        <div className="price">{`${item.price}`}</div>
-        <div className="ingredients">{item.ingredients}</div>
-        <FormGroup row>
-          {allIngredients.map((ingredient, index) => (
-            <>
-              {console.log(ingredient)}
-              <FormControlLabel
-                control={
-                  <Checkbox
-                    checked={ingredientsState[index]}
-                    // onChange={}
-                    name={ingredient}
+      <div className="detail-container">
+        <div className="taco-detail-container">
+          <img className="item-1" src={item.imgURL} alt={item.name} />
+          <div className="info-container">
+            <div className="name">{item.name}</div>
+            <div className="price">{`${item.price}`}</div>
+            
+            <FormGroup className="check-box" row>
+              {allIngredients.map((ingredient, index) => (
+                <>
+                  {console.log(ingredient)}
+                  <FormControlLabel 
+                    control={
+                      <Checkbox 
+                        checked={ingredientsState[index]}
+                        onChange={() => {
+                          handleChange(index);
+                        }}
+                        name={ingredient}
+                      />
+                    }
+                    label={ingredient}
                   />
-                }
-                label={ingredient}
-              />
-            </>
-          ))}
-        </FormGroup>
+                </>
+              ))}
+            </FormGroup>
+          </div>
+        </div>
       </div>
     </Layout>
   );

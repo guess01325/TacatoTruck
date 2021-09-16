@@ -1,4 +1,6 @@
 import "./MenuItem.css";
+import { Link as RouterLink } from "react-router-dom";
+import Link from '@material-ui/core/Link';
 import { makeStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import CardActionArea from "@material-ui/core/CardActionArea";
@@ -9,22 +11,23 @@ import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
 import Paper from "@material-ui/core/Paper";
+import { ButtonGroup } from "@material-ui/core";
 
 const useStyles = makeStyles({
   root: {
-    maxWidth: 345,
+    width: 250,
+    height: 350,
+  },
+  cardContent: {
+    height: 75,
   },
 });
 
 const useStylesGrid = makeStyles((theme) => ({
-  gridRoot: {
-    flexGrow: 1,
-    margin: 32,
-  },
   gridPaper: {
-    padding: theme.spacing(2),
+    padding: theme.spacing(5),
     textAlign: "center",
-    color: theme.palette.text.secondary,
+    backgroundColor: "#8C9267",
   },
 }));
 
@@ -33,43 +36,41 @@ function MenuItem(props) {
   const classesGrid = useStylesGrid();
 
   return (
-    <div className={classesGrid.gridRoot}>
-      <Grid container spacing={3} justifyContent="center">
-        <Grid item m>
-          <Paper
-            className={classesGrid.gridPaper}
-            variant="outlined"
-            elevation={3}
-          >
-            <Card className={classes.root} elevation={3}>
-              <CardActionArea>
-                <CardMedia
-                  component="img"
-                  alt="item"
-                  height="140"
-                  image={props.imgURL}
-                  alt={props.name}
-                  title={props.name}
-                />
-                <CardContent>
-                  <Typography gutterBottom variant="h5" component="h2">
-                    {props.name}
-                  </Typography>
-                </CardContent>
-              </CardActionArea>
-              <CardActions>
-                <Button size="small" color="primary">
-                  Modify
-                </Button>
-                <Button size="small" color="primary">
-                  Order Meow
-                </Button>
-              </CardActions>
-            </Card>
-          </Paper>
-        </Grid>
-      </Grid>
-    </div>
+    <Grid item m>
+      <Paper className={classesGrid.gridPaper} variant="outlined" elevation={3}>
+        <Card className={classes.root} elevation={3}>
+          <CardActionArea>
+            <CardMedia
+              component="img"
+              alt="item"
+              height="140"
+              image={props.imgURL}
+              alt={props.name}
+              title={props.name}
+            />
+            <CardContent className={classes.cardContent}>
+              <Typography gutterBottom variant="h6" component="h2">
+                {props.name}
+              </Typography>
+            </CardContent>
+          </CardActionArea>
+          <CardActions>
+            <ButtonGroup
+              orientation="vertical"
+              aria-label="vertical contained primary button group"
+              variant="contained"
+              justifyContent="center"
+              fullWidth
+            >
+              <Link component={RouterLink} to={`/menu/${props.id}`}>
+                <Button size="small">Modify</Button>
+              </Link>
+              <Button size="small">Order Meow</Button>
+            </ButtonGroup>
+          </CardActions>
+        </Card>
+      </Paper>
+    </Grid>
   );
 }
 
