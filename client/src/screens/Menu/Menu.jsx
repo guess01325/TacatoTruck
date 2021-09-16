@@ -29,7 +29,7 @@ function Menu(props) {
     <Layout user={props.user}>
       <div className="items">
         <div className={classesGrid.gridRoot}>
-          <Grid container spacing={3} justifyContent="center">
+          <Grid container spacing={8} justifyContent="center">
             {menu.map((menuItem, index) => {
               return (
                 <MenuItem

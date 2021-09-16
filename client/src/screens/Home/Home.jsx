@@ -33,7 +33,7 @@ function Home(props) {
           alt="taco table"
         ></img>
         <div className={classesGrid.gridRoot}>
-          <Grid container spacing={2} direction="row">
+          <Grid container spacing={3}>
             <Grid item m className={classesGrid.gridOurMission}>
               <Paper elevation={3}>
                 <img
