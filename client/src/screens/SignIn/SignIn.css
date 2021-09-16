@@ -7,7 +7,7 @@
 }
 
 
-.formContainer {
+.formSignInContainer {
   align-self: center;
   padding: 1em;
   width: 50%;
@@ -21,13 +21,13 @@
 
 
 
-.formContainer h1 {
+.formSignInContainer h1 {
   text-align: center;
   font-size: 40px;
   font-family: 'Ranchers';
 }
 
-.formContainer form {
+.formSignInContainer form {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -35,7 +35,7 @@
   width: 80%;
 }
 
-.formContainer form input {
+.formSignInContainer form input {
   width: 100%;
   padding: 0.6em 1em;
   margin: 0.5em auto;
@@ -44,30 +44,31 @@
   border: 2px solid #e0e0e0;
   outline: none;
   transition: all 0.4s ease;
+  background-color: lightgrey;
 }
 
-.formContainer form input:focus,
-.formContainer form input:active {
+.formSignInContainer form input:focus,
+.formSignInContainer form input:active {
   border: 2px solid #82ada9;
 }
 
 
-.formContainer form button {
+.formSignInContainer form button {
   width: 50%;
   margin: 1em auto;
   background: goldenrod;
  
 }
 
-.formContainer form button:hover {
+.formSignInContainer form button:hover {
   box-shadow: 3px 8px 16px rgba(0, 0, 0, 0.5);
 }
 
-.formContainer form a {
+.formSignInContainer form a {
   margin: auto;
 }
 
-.formContainer form label {
+.formSignInContainer form label {
   margin-top: 0.6em;
 }
 
@@ -87,7 +88,7 @@
   transition: all 2s ease;
 }
   
-.formContainer label{
+.formSignInContainer label{
   font-size: 15px;;
 }
 
