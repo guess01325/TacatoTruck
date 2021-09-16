@@ -1,6 +1,6 @@
 import "./MenuItem.css";
 import { Link as RouterLink } from "react-router-dom";
-import Link from '@material-ui/core/Link';
+import Link from "@material-ui/core/Link";
 import { makeStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import CardActionArea from "@material-ui/core/CardActionArea";
@@ -12,6 +12,7 @@ import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
 import Paper from "@material-ui/core/Paper";
 import { ButtonGroup } from "@material-ui/core";
+import { useHistory } from "react-router-dom";
 
 const useStyles = makeStyles({
   root: {
@@ -34,6 +35,16 @@ const useStylesGrid = makeStyles((theme) => ({
 function MenuItem(props) {
   const classes = useStyles();
   const classesGrid = useStylesGrid();
+
+  const history = useHistory();
+
+  const handleDirectDetail = () => {
+    history.push(`/menu/${props.id}`);
+  };
+
+  const handleOrder = () => {
+    history.push(`/`);
+  };
 
   return (
     <Grid item m>
@@ -62,10 +73,22 @@ function MenuItem(props) {
               justifyContent="center"
               fullWidth
             >
-              <Link component={RouterLink} to={`/menu/${props.id}`}>
-                <Button size="small">Modify</Button>
-              </Link>
-              <Button size="small">Order Meow</Button>
+              {/* <Link
+                id="button-link"
+                component={RouterLink}
+                to={`/menu/${props.id}`} */}
+              {/* > */}
+              <Button
+                id="button-link"
+                onClick={handleDirectDetail}
+                size="small"
+              >
+                Modify
+              </Button>
+              {/* </Link> */}
+              <Button id="order-button" onClick={handleOrder} size="small">
+                Order Meow
+              </Button>
             </ButtonGroup>
           </CardActions>
         </Card>

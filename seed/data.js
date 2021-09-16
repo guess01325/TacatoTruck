@@ -38,9 +38,9 @@ const insertData = async () => {
   // products data that we want inserted into database
   const menuItems = [
     {
-      name: "Barbacoa Short Rib Tacato",
+      name: "Barbacoa Short Rib TaCato",
       imgURL:
-        "https://images.unsplash.com/photo-1573521193826-58c7dc2e13e3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
+        "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fonlymeat.net%2Fwp-content%2Fuploads%2F2019%2F12%2Ftai-s-captures-JiRSy0GfqPA-unsplash-1024x683.jpg&f=1&nofb=1",
       price: "$3.95",
       ingredients: [
         "Cheese",
@@ -53,9 +53,9 @@ const insertData = async () => {
       ],
     },
     {
-      name: "Tacatos Al Pastor",
+      name: "TaCatos Al Pastor",
       imgURL:
-        "https://images.unsplash.com/photo-1573521193826-58c7dc2e13e3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
+        "https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fmilrecetas.net%2Fwp-content%2Fuploads%2F2016%2F09%2FTacos-al-pastor-3.jpg&f=1&nofb=1",
       price: "$3.75",
       ingredients: [
         "Cheese",
@@ -68,9 +68,9 @@ const insertData = async () => {
       ],
     },
     {
-      name: "Mango Fish Tacato",
+      name: "Mango Fish TaCato",
       imgURL:
-        "https://images.unsplash.com/photo-1573521193826-58c7dc2e13e3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
+        "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.lemontreedwelling.com%2Fwp-content%2Fuploads%2F2017%2F04%2FSalmon-Tacos-5-small.jpg&f=1&nofb=1",
       price: "$3.95",
       ingredients: [
         "Cheese",
@@ -83,9 +83,9 @@ const insertData = async () => {
       ],
     },
     {
-      name: "Cheeseburger Tacato",
+      name: "Cheeseburger TaCato",
       imgURL:
-        "https://images.unsplash.com/photo-1573521193826-58c7dc2e13e3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
+        "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fhips.hearstapps.com%2Fdel.h-cdn.co%2Fassets%2F18%2F02%2F1600x800%2Flandscape-1515468779-delish-kids-cheeseburger-tacos-004.jpg%3Fresize%3D1200%3A*&f=1&nofb=1",
       price: "$3.75",
       ingredients: [
         "Cheese",
@@ -99,9 +99,9 @@ const insertData = async () => {
       ],
     },
     {
-      name: "Bacon and Queso Breakfast Tacato",
+      name: "Bacon and Queso Breakfast TaCato",
       imgURL:
-        "https://images.unsplash.com/photo-1573521193826-58c7dc2e13e3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
+        "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fucarecdn.com%2F1304e103-315b-4677-8ef6-bbfc5a64e87f%2F-%2Fcrop%2F1829x1359%2F219%2C0%2F-%2Fresize%2F912x678%2F&f=1&nofb=1",
       price: "$3.25",
       ingredients: [
         "Cheese",
@@ -172,7 +172,7 @@ const insertData = async () => {
     },
     {
       name: "The Cheshire Cat",
-      imgURL: `https://www.twospoons.ca/wp-content/uploads/2020/07/best-vegan-taco-recipe-easy-how-to-make-vegan-tacos-twospoons-6.jpg`,
+      imgURL: `https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.makingthymeforhealth.com%2Fwp-content%2Fuploads%2F2018%2F03%2FLentil-Taco-Skillet-_-700x1050.jpg&f=1&nofb=1`,
       price: "$6.00",
       ingredients: ["beyond beef", "lentils", "roasted corn", "red onions"],
     },
@@ -205,7 +205,7 @@ const insertData = async () => {
       ],
     },
     {
-      name: "Tacato Sunrise",
+      name: "TaCato Sunrise",
       imgURL:
         "https://res.cloudinary.com/otisg/image/upload/v1631706682/TacatoSunrise_wm2opn.webp",
       price: "$2.99",
@@ -223,7 +223,7 @@ const insertData = async () => {
       ],
     },
     {
-      name: "Tacato Cat Delight",
+      name: "TaCato Cat Delight",
       imgURL:
         "https://res.cloudinary.com/otisg/image/upload/v1631707242/ShrimpTaco_ok62kg.jpg",
       price: "$3.99",
@@ -236,14 +236,14 @@ const insertData = async () => {
       ],
     },
     {
-      name: "Tacato Steak & Pineapple",
+      name: "TaCato Steak & Pineapple",
       imgURL:
         "https://res.cloudinary.com/otisg/image/upload/v1631707987/steak_Pineapple_nfnrar.jpg",
       price: "$2.99",
       ingredients: ["Cheese", "Cilantro", "Green Onions", "Jalepeño Slices"],
     },
     {
-      name: "Tacato Chicken Delight",
+      name: "TaCato Chicken Delight",
       imgURL:
         "https://res.cloudinary.com/otisg/image/upload/v1631708333/ChickenTaco_gtgtln.jpg",
       price: "$2.99",
@@ -256,7 +256,7 @@ const insertData = async () => {
       ],
     },
     {
-      name: "Tacato Cheese Cake Taco",
+      name: "TaCato Cheese Cake Taco",
       imgURL:
         "https://res.cloudinary.com/otisg/image/upload/v1631708837/CheeseCakeTaco_wsuhlo.jpg",
       price: "$3.50",
