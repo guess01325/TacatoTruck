@@ -20,6 +20,7 @@ const useStylesGrid = makeStyles((theme) => ({
     textAlign: "center",
     minWidth: "300px",
   },
+
 }));
 
 function Home(props) {
