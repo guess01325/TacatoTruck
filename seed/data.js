@@ -11,6 +11,8 @@ const insertData = async () => {
     username: "jake",
     email: "jake@super.gmail.com",
     password_digest: await bcrypt.hash("!a$ecureP@ssw0Rd55!", 12),
+    products: [],
+    cart: [],
   });
   await user1.save();
 
@@ -18,6 +20,8 @@ const insertData = async () => {
     username: "courtney",
     email: "courtney@super.gmail.com",
     password_digest: await bcrypt.hash("!$h0pp3R1", 12),
+    products: [],
+    cart: [],
   });
   await user2.save();
 
@@ -25,6 +29,8 @@ const insertData = async () => {
     username: "eileen",
     email: "eileen@super.gmail.com",
     password_digest: await bcrypt.hash("!$eller4Lif3", 12),
+    products: [],
+    cart: [],
   });
   await user3.save();
 
@@ -32,6 +38,8 @@ const insertData = async () => {
     username: "otis",
     email: "otis@super.gmail.com",
     password_digest: await bcrypt.hash("L0v32!p4int", 12),
+    products: [],
+    cart: [],
   });
   await user4.save();
 
