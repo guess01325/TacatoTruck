@@ -9,6 +9,7 @@ const useStylesGrid = makeStyles((theme) => ({
   gridRoot: {
     flexGrow: 1,
     margin: 32,
+
   },
   gridOurMission: {
     width: "50%",

@@ -43,7 +43,7 @@ function MenuItemDetail(props) {
 
   return (
     <Layout user={props.user}>
-      <div>
+      <div className="main-container">
         <h1>This is the menu item detail</h1>
         <img className="item-1" src={item.imgURL} alt={item.name} />
         <div className="name">{item.name}</div>
