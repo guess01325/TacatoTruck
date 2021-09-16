@@ -6,17 +6,7 @@ import { getMenuItem } from "../../services/menuItems";
 import FormGroup from "@material-ui/core/FormGroup";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Checkbox from "@material-ui/core/Checkbox";
-
-const allIngredients = [
-  "Cheese",
-  "Lettuce",
-  "Tomatoes",
-  "BBQ Chicken Nuggets",
-  "Fish",
-  "Apples",
-  "Oreos",
-  "BBQ Chicken",
-];
+import allIngredients from "../../utils/ingredients";
 
 function MenuItemDetail(props) {
   const [item, setItem] = useState(null);
@@ -66,7 +56,7 @@ function MenuItemDetail(props) {
                 control={
                   <Checkbox
                     checked={ingredientsState[index]}
-                    // onChange={handleOnChange(index)}
+                    onChange={() => handleOnChange(index)}
                     name={ingredient}
                   />
                 }

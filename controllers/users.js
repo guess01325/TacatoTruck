@@ -2,6 +2,7 @@ import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 
 import User from "../models/user.js";
+import MenuItem from "../models/menuItem.js";
 
 const SALT_ROUNDS = process.env.SALT_ROUNDS || 12;
 const TOKEN_KEY = process.env.TOKEN_KEY || "areallytastytacokey";
@@ -74,3 +75,109 @@ export const verify = async (req, res) => {
     res.status(401).send("Not Authorized");
   }
 };
+
+export const getUser = async (req, res) => {
+  try {
+    const user = await User.findById(req.params.id).populate("menuItems");
+    res.json(user);
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ error: error.message });
+  }
+};
+
+export const getUserMenuItems = async (req, res) => {
+  try {
+    const user = await User.findById(req.params.id);
+    const userMenuItems = await MenuItem.find({ userId: user._id });
+    res.json(userMenuItems);
+  } catch (error) {
+    console.log(error.message);
+    res.status(500).json({ error: error.message });
+  }
+};
+
+// export const getUserMenuItem = async (req, res) => {
+//   try {
+//     const user = await User.findById(req.params.id);
+//     const userMenuItem = await MenuItem.findById(req.params.menuItemId).populate(
+//       "userId"
+//     );
+//     if (userMenuItem.userId.equals(user._id)) {
+//       return res.json(userMenuItem);
+//     }
+//     throw new Error(
+//       `Product ${userMenuItem._id} does not belong to user ${user._id}`
+//     );
+//   } catch (error) {
+//     console.log(error.message);
+//     res.status(500).json({ error: error.message });
+//   }
+// };
+
+// export const createUserMenuItem = async (req, res) => {
+//   try {
+//     if (await User.findById(req.body.userId)) {
+//       const userMenuItem = new MenuItem(req.body);
+//       await userMenuItem.save();
+//       res.status(201).json(userMenuItem);
+//     }
+//     throw new Error(`User ${req.body.userId} does not exist!`);
+//   } catch (error) {
+//     console.log(error);
+//     res.status(500).json({ error: error.message });
+//   }
+// };
+
+// export const updateUserMenuItem = async (req, res) => {
+//   try {
+//     if (await User.findById(req.params.id)) {
+//       const menuItem = await MenuItem.findByIdAndUpdate(menuItemId, req.body, {
+//         new: true,
+//       });
+//       res.status(200).json(menuItem);
+//     }
+//     throw new Error(`User ${req.params.id} does not exist!`);
+//   } catch (error) {
+//     console.log(error);
+//     res.status(500).json({ error: error.message });
+//   }
+// };
+
+// export const deleteUserProduct = async (req, res) => {
+//   try {
+//     if (await User.findById(req.params.id)) {
+//       const deleted = await MenuItem.findByIdAndDelete(req.params.menuItemId);
+//       if (deleted) {
+//         return res.status(200).send("Menu item deleted");
+//       }
+//       throw new Error(`Product ${req.params.menuItemId} not found`);
+//     }
+//     throw new Error(`User ${req.params.id} does not exist!`);
+//   } catch (error) {
+//     console.log(error);
+//     res.status(500).json({ error: error.message });
+//   }
+// };
+
+export const getUserCart = async (req, res) => {
+  try {
+    const userCart = await User.findById(req.params.id).populate("cart");
+    res.json(userCart.cart);
+  } catch (error) {
+    console.log(error.message);
+    res.status(500).json({ error: error.message });
+  }
+};
+
+export const deleteUserCartItem = async (req, res) => {
+  const user = User.findById(req.params.id)
+  if (await User.findById(req.params.id)) {
+    const deleted = await user.cart.findByIdAndDelete(req.params.cartItemId)
+    if (deleted) {
+      return res.status(200).send("Menu item deleted");
+    }
+    throw new Error(`Menu item ${req.params.menuItemId} not found`);
+  }
+  throw new Error(``)
+}

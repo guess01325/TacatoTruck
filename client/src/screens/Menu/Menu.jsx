@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import { getMenuItems } from "../../services/menuItems";
 import "./Menu.css";
 import { makeStyles } from "@material-ui/core/styles";
