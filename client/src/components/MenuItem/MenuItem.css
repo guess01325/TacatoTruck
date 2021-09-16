@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Short+Stack&display=swap");
+
 #button-link {
   background-color: #edb345;
   margin-top: 20px;
@@ -7,4 +9,5 @@
 #order-button {
   background-color: #ba0014;
   margin-bottom: 20px;
+  box-shadow: #edb345;
 }

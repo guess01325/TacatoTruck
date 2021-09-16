@@ -33,7 +33,7 @@ const useStylesGrid = makeStyles((theme) => ({
 
 const theme = createTheme({
   typography: {
-    fontFamily: "Segoe UI",
+    fontFamily: "Short Stack",
     fontSize: 15,
   },
 });
@@ -75,30 +75,32 @@ function MenuItem(props) {
             </CardContent>
           </CardActionArea>
           <CardActions>
-            <ButtonGroup
-              orientation="vertical"
-              aria-label="vertical contained primary button group"
-              variant="contained"
-              justifyContent="center"
-              fullWidth
-            >
-              {/* <Link
+            <ThemeProvider theme={theme}>
+              <ButtonGroup
+                orientation="vertical"
+                aria-label="vertical contained primary button group"
+                variant="contained"
+                justifyContent="center"
+                fullWidth
+              >
+                {/* <Link
                 id="button-link"
                 component={RouterLink}
                 to={`/menu/${props.id}`} */}
-              {/* > */}
-              <Button
-                id="button-link"
-                onClick={handleDirectDetail}
-                size="small"
-              >
-                Modify
-              </Button>
-              {/* </Link> */}
-              <Button id="order-button" onClick={handleOrder} size="small">
-                Order Meow
-              </Button>
-            </ButtonGroup>
+                {/* > */}
+                <Button
+                  id="button-link"
+                  onClick={handleDirectDetail}
+                  size="medium"
+                >
+                  Modify
+                </Button>
+                {/* </Link> */}
+                <Button id="order-button" onClick={handleOrder} size="medium">
+                  Order Meow
+                </Button>
+              </ButtonGroup>
+            </ThemeProvider>
           </CardActions>
         </Card>
       </Paper>
