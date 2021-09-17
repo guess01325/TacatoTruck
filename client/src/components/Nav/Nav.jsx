@@ -10,11 +10,8 @@ import Drawer from "@material-ui/core/Drawer";
 import List from "@material-ui/core/List";
 import Divider from "@material-ui/core/Divider";
 import ListItem from "@material-ui/core/ListItem";
-import ListItemIcon from "@material-ui/core/ListItemIcon";
-import ListItemText from "@material-ui/core/ListItemText";
-import InboxIcon from "@material-ui/icons/MoveToInbox";
-import MailIcon from "@material-ui/icons/Mail";
-import Cart from "../Cart/Cart"
+import { getUserCart, addUserCartItem, deleteUserCartItem } from "../../services/users";
+import CartItem from "../CartItem/CartItem"
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -35,7 +32,7 @@ const useStyles = makeStyles((theme) => ({
     width: 80,
   },
   list: {
-    width: 350,
+    width: 550,
   },
 }));
 
@@ -76,9 +73,22 @@ const alwaysOptions = (
     </Button>
   </>
 );
-const Nav = ({ user }) => {
+const Nav = (props) => {
   const classes = useStyles();
   const [drawer, setDrawer] = useState(false);
+  const [cartItems, setCartItems] = useState([]);
+
+  useEffect(() => {
+    if (props.user) {
+      console.log(props.user.id);
+      const fetchCart = async () => {
+        const userCartItems = await getUserCart(props.user.id);
+        setCartItems(userCartItems);
+      };
+      fetchCart();
+    }
+    console.log(cartItems);
+  }, [drawer, setDrawer]);
 
   const toggleDrawer = (open) => (event) => {
     if (
@@ -89,6 +99,19 @@ const Nav = ({ user }) => {
       return;
     }
     setDrawer(open);
+  };
+
+  const addCartItem = async (id) => {
+    // setCartItems(cartItems.concat(id));
+    await addUserCartItem(props.user.id, id)
+  };
+
+  const removeCartItem = async (id) => {
+    // setCartItems(
+    //   cartItems.filter((item) => item !== event.currentTarget.value)
+    // );
+    // props.setToggleFetch((prevState) => !prevState);
+    await deleteUserCartItem(props.user.id, id)
   };
 
   const list = () => (
@@ -103,16 +126,33 @@ const Nav = ({ user }) => {
       </Typography>
       <Divider />
       <List>
-        {["All mail", "Trash", "Spam"].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>
-              {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-            </ListItemIcon>
-            <ListItemText primary={text} />
+        {cartItems.map((item) => (
+          // <ListItem button key={text}>
+          //   <ListItemIcon>
+          //     {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+          //   </ListItemIcon>
+          //   <ListItemText primary={text} />
+          // </ListItem>
+          // <ListItem>
+          //   <ListItemIcon>
+          //     <Typography variant="h6" gutterBottom align="center">
+          //       {item.name}
+          //     </Typography>
+          //   </ListItemIcon>
+          //   <ListItemText />
+          // </ListItem>
+          <ListItem>
+            {cartItems.length === 0 ? <p>No items in cart.</p> : null}
+            {cartItems.map((item) => (
+              <CartItem
+                item={item}
+                addCartItem={addCartItem}
+                removeCartItem={removeCartItem}
+              />
+            ))}
           </ListItem>
         ))}
       </List>
-      <Cart user={user}/>
     </div>
   );
 
@@ -142,11 +182,13 @@ const Nav = ({ user }) => {
               </NavLink>
             </Typography>
             <div className="links">
-              {user && (
-                <div className="link welcome">Welcome, {user.username}</div>
+              {props.user && (
+                <div className="link welcome">
+                  Welcome, {props.user.username}
+                </div>
               )}
               {alwaysOptions}
-              {user ? authenticatedOptions : unauthenticatedOptions}
+              {props.user ? authenticatedOptions : unauthenticatedOptions}
             </div>
             <Button onClick={toggleDrawer(true)}>
               <img
@@ -168,4 +210,5 @@ const Nav = ({ user }) => {
     </nav>
   );
 };
+
 export default Nav;

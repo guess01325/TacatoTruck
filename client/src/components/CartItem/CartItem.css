@@ -1,0 +1,15 @@
+div {
+  flex: 1;
+}
+
+.information,
+.buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.cartItemImg {
+  max-width: 80px;
+  object-fit: cover;
+  margin-left: 40px;
+}
