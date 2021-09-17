@@ -1,3 +1,7 @@
+.formatContainer{
+  height: 100vh;
+}
+
 .outterFormSignUpContainer{
   display: flex;
   flex-direction: row-reverse;

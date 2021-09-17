@@ -2,7 +2,7 @@ import "./SignUp.css";
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { signUp } from "../../services/users";
-import {Link} from "react-router-dom"
+import { Link } from "react-router-dom";
 import Layout from "../../components/Layout/Layout";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
@@ -111,63 +111,62 @@ function SignUp(props) {
 
   return (
     <Layout user={props.user}>
-      <div className="outterFormSignUpContainer">
-        <div className='formSignUpContainer'>
-
-          <h3>Sign Up</h3>
-          <form onSubmit={onSignUp}>
-            <div className="username">
-            <label>Username</label>
-            <input
-              required
-              type='text'
-              name='username'
-              value={username}
-              placeholder='Enter username'
-              onChange={handleChange}
+      <div className="formatContainer">
+        <div className="outterFormSignUpContainer">
+          <div className="formSignUpContainer">
+            <h3>Sign Up</h3>
+            <form onSubmit={onSignUp}>
+              <div className="username">
+                <label>Username</label>
+                <input
+                  required
+                  type="text"
+                  name="username"
+                  value={username}
+                  placeholder="Enter username"
+                  onChange={handleChange}
+                />
+              </div>
+              <label>Email address</label>
+              <input
+                required
+                type="email"
+                name="email"
+                value={email}
+                placeholder="Enter email"
+                onChange={handleChange}
               />
-            </div>
-            <label>Email address</label>
-            <input
-              required
-              type='email'
-              name='email'
-              value={email}
-              placeholder='Enter email'
-              onChange={handleChange}
+              <label>Password</label>
+              <input
+                required
+                name="password"
+                value={password}
+                type="password"
+                placeholder="Password"
+                onChange={handleChange}
+              />
+              <label>Password Confirmation</label>
+              <input
+                required
+                name="passwordConfirmation"
+                value={passwordConfirmation}
+                type="password"
+                placeholder="Confirm Password"
+                onChange={handleChange}
+              />
+              {renderError()}
+            </form>
+          </div>
+          <div className="catSignUp">
+            <img
+              src="https://res.cloudinary.com/dy6xpqkkj/image/upload/v1631547003/Tactato%20Truck/istockphoto-833450608-612x612-removebg-preview_ms3oez.png"
+              alt="cat"
             />
-            <label>Password</label>
-            <input
-              required
-              name='password'
-              value={password}
-              type='password'
-              placeholder='Password'
-              onChange={handleChange}
-            />
-            <label>Password Confirmation</label>
-            <input
-              required
-              name='passwordConfirmation'
-              value={passwordConfirmation}
-              type='password'
-              placeholder='Confirm Password'
-              onChange={handleChange}
-            />
-            {renderError()}
-          </form>
-        </div>  
-         <div className="catSignUp">
-          <img
-            src="https://res.cloudinary.com/dy6xpqkkj/image/upload/v1631547003/Tactato%20Truck/istockphoto-833450608-612x612-removebg-preview_ms3oez.png"
-            alt="cat"
-          /> 
-        </div> 
+          </div>
+        </div>
       </div>
     </Layout>
   );
 }
 
 export default SignUp;
-
-
