@@ -16,7 +16,7 @@
 
   background-color: #9da27a;
   margin: 125px auto;
-  /* margin-left: 100px ; */
+  margin: 50px;
 }
 
 .taco-detail-container {
@@ -38,6 +38,7 @@
   height: 350px;
   top: 45px;
   width: 50%;
+  margin: 100px;
 }
 
 .taco-detail-container img {
@@ -45,9 +46,10 @@
   align-items: center;
   justify-content: center;
   height: 300px;
-  padding: 0px 20px;
+  /* padding: 0px 20px; */
   margin-top: 90px;
-  border-radius: 15%;
+  border: solid 2px black;
+  border-radius: 10px;
 }
 
 .name {
@@ -57,12 +59,12 @@
   width: auto;
 }
 
-.taco-detail-container img {
+/* .taco-detail-container img {
   width: 350px;
   height: 375px;
   padding: 0px 20px;
   margin-top: 130px;
-}
+} */
 
 .name {
   position: relative;
@@ -85,40 +87,58 @@
   color: aliceblue;
 }
 
-@media only screen and (max-width: 1050px) {
-  .taco-detail-container {
-    flex-direction: column-reverse;
-    justify-content: space-between;
-    align-content: center;
-    height: 50%;
-    margin: 50px auto;
+
+  @media all and (min-width: 500px) and (max-width: 1525px){
+  .detail-container{
+    height: 1100px;
   }
-  .detail-container {
-    height: fit-content;
+  .taco-detail-container img{
+    width: 300px;
+    height: auto;
   }
-  .taco-detail-container img {
-    height: 300px;
-    width: auto;
-  }
+/*    
   .info-container {
-    height: 30%;
+   height: 400px;
+   
     justify-content: center;
     align-items: center;
-    margin-bottom: 20px;
+    margin: 40px;
   }
   .name {
     font-size: 20px;
+    
   }
-  .price {
+  .price{
     font-size: 20px;
-  }
+  } */
+
 }
 
+@media all and (min-width: 380px) and (max-width: 1022px){
+  .detail-container {
+    height: 1400px;
+  }
+  .taco-detail-container .img{
+ width: 100px;
+ height: auto;
+
+  }
+
+}
+/*   
 @media only screen and (max-width: 650px) {
-  .name {
+  .name{
     width: 30px;
   }
-}
+  .taco-detail-container img{
+    width: 300px;
+    height: auto;
+  }
+  .name{
+    font-size: 10px;
+  }
+
+} */
 
 /* @media only screen and (mad-width: 1300px){
   .taco-detail-container img{
