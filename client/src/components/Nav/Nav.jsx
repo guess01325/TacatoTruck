@@ -80,14 +80,12 @@ const Nav = (props) => {
 
   useEffect(() => {
     if (props.user) {
-      console.log(props.user.id);
       const fetchCart = async () => {
         const userCartItems = await getUserCart(props.user.id);
         setCartItems(userCartItems);
       };
       fetchCart();
     }
-    console.log(cartItems);
   }, [drawer, setDrawer]);
 
   const toggleDrawer = (open) => (event) => {
@@ -102,17 +100,17 @@ const Nav = (props) => {
   };
 
   const addCartItem = async (id) => {
-    // setCartItems(cartItems.concat(id));
     await addUserCartItem(props.user.id, id)
   };
 
   const removeCartItem = async (id) => {
-    // setCartItems(
-    //   cartItems.filter((item) => item !== event.currentTarget.value)
-    // );
-    // props.setToggleFetch((prevState) => !prevState);
     await deleteUserCartItem(props.user.id, id)
   };
+
+  let totalPriceCart = 0
+  cartItems.map((item) => {
+    totalPriceCart += parseFloat((item.price).slice(1));
+  })
 
   const list = () => (
     <div
@@ -137,6 +135,7 @@ const Nav = (props) => {
           </ListItem>
         ))}
       </List>
+      <h2>Total: ${totalPriceCart.toFixed(2)}</h2>
     </div>
   );
 

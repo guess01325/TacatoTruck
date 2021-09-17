@@ -1,6 +1,5 @@
 import "./CartItem.css";
 import Button from "@material-ui/core/Button";
-import Container from "@material-ui/core/Container";
 import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme) => ({
@@ -14,10 +13,8 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function CartItem(props) {
-  console.log(props.item._id);
   const classes = useStyles();
   return (
-    // <Container className={classes.cartItemWrapper}>
     <div className="cartItemWrapper">
       <div className="cartDiv">
         <h3>{props.item.name}</h3>
@@ -50,7 +47,6 @@ function CartItem(props) {
         alt={props.item.name}
       />
     </div>
-    // </Container>
   );
 }
 
