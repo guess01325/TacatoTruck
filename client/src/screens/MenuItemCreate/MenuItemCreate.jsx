@@ -71,7 +71,7 @@ function MenuItemCreate(props) {
             name="name"
             value={menuItem.name}
             onChange={handleChange}
-          />
+            />
           <input
             className="create-price"
             placeholder="Price"
@@ -79,7 +79,7 @@ function MenuItemCreate(props) {
             value={menuItem.price}
             name="price"
             onChange={handleChange}
-          />
+            />
           <textarea
             className="create-ingredients"
             placeholder="Ingredients"
@@ -87,7 +87,7 @@ function MenuItemCreate(props) {
             value={menuItem.ingredients}
             name="ingredients"
             onChange={handleChange}
-          />
+            />
           <input
             className="create-link"
             placeholder="Link"
@@ -95,7 +95,7 @@ function MenuItemCreate(props) {
             name="imgURL"
             required
             onChange={handleChange}
-          />
+            />
           <button type="submit" className="create-submit-button">
             Submit
           </button>
