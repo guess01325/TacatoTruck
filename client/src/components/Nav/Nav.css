@@ -26,9 +26,25 @@ nav a {
   letter-spacing: 2px;
 }
 
+
 .userGreeting {
   color: inherit;
   text-decoration: none;
   font-family: "Ranchers", cursive;
   color: #e7af00;
 }
+
+@media only screen and (min-device-width: 375px) and (max-device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
+  nav a {
+    font-size: 10px;
+    color: blue;
+  }
+}
+
+/* @media all and (min-width: 375px) and (max-width: 812px) {
+  .link {
+    font-size: 10px;
+    color: blue;
+  }
+} */
+

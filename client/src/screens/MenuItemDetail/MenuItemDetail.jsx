@@ -20,7 +20,6 @@ function MenuItemDetail(props) {
   const [ingredientsState, setIngredientsState] = useState(
     new Array(allIngredients.length).fill(false)
   );
-
   console.log(ingredientsState);
   useEffect(() => {
     const fetchItem = async () => {
@@ -81,5 +80,6 @@ function MenuItemDetail(props) {
     </Layout>
   );
 }
+  
 
 export default MenuItemDetail;
