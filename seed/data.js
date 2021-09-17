@@ -72,7 +72,6 @@ const insertData = async () => {
         "Tomatoes",
         "Cilantro",
         "Onions",
-        "Pineapple",
       ],
     },
     {
@@ -83,7 +82,7 @@ const insertData = async () => {
       ingredients: [
         "Cheese",
         "Lettuce",
-        "Tilapia",
+        "Fish",
         "Avocado",
         "Jalepeño Slices",
         "Mango",
@@ -99,7 +98,7 @@ const insertData = async () => {
         "Cheese",
         "Lettuce",
         "Tomatoes",
-        "Ground Beef",
+        "Beef",
         "Onions",
         "Bacon",
       ],
@@ -111,10 +110,9 @@ const insertData = async () => {
       price: "$3.25",
       ingredients: [
         "Cheese",
-        "Hash Brown Potatoes",
         "Eggs",
         "Bacon",
-        "Queso Blanco",
+        "Cheese",
         "Salsa",
       ],
     },
@@ -129,7 +127,7 @@ const insertData = async () => {
         "Tomatoes",
         "Eggs",
         "Avocado",
-        "Green Onions",
+        "Onions",
       ],
     },
     {
@@ -137,14 +135,14 @@ const insertData = async () => {
       imgURL:
         "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fspicysouthernkitchen.com%2Fwp-content%2Fuploads%2Fcatfish-tacos-13.jpg&f=1&nofb=1",
       price: "$3.75",
-      ingredients: ["Cheese", "Cilantro", "Red Onions"],
+      ingredients: ["Cheese", "Cilantro", "Onions"],
     },
     {
       name: "Beef Brisket TaCato",
       imgURL:
         "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.tasteofhome.com%2Fwp-content%2Fuploads%2F2018%2F03%2FBeef-Brisket-Tacos_EXPS_EDSC17_135502_D03_10_3b-2.jpg&f=1&nofb=1",
       price: "$3.95",
-      ingredients: ["Cheese", "Cilantro", "Green Onions", "Jalepeño Slices"],
+      ingredients: ["Cheese", "Cilantro", "Onions", "Jalepeños"],
     },
     {
       name: "Ropa Vieja TaCato",
@@ -152,9 +150,8 @@ const insertData = async () => {
         "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fthelemonbowl.com%2Fwp-content%2Fuploads%2F2018%2F12%2FRopa-Vieja-Tacos-Recipe.jpg&f=1&nofb=1",
       price: "$3.95",
       ingredients: [
-        "Shredded Beef",
-        "Red Bell Pepper",
-        "Green Bell Pepper",
+        "Beef",
+        "Peppers",
         "Onions",
       ],
     },
@@ -166,7 +163,6 @@ const insertData = async () => {
       ingredients: [
         "Strawberries",
         "Vanilla Ice Cream",
-        "Chocolate Syrup",
         "Chocolate Sprinkles",
       ],
     },
@@ -174,39 +170,39 @@ const insertData = async () => {
       name: "The Garfield",
       imgURL: `https://thecozycook.com/wp-content/uploads/2021/06/Baked-Tacos-3.jpg`,
       price: "$4.00",
-      ingredients: ["Extra Ground Beef", "Extra Cheese", "Extra Red Sauce"],
+      ingredients: ["Beef", "Cheese", "Pico de Gallo"],
     },
     {
       name: "The Cheshire Cat",
       imgURL: `https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.makingthymeforhealth.com%2Fwp-content%2Fuploads%2F2018%2F03%2FLentil-Taco-Skillet-_-700x1050.jpg&f=1&nofb=1`,
       price: "$6.00",
-      ingredients: ["Beyond Beef", "Lentils", "Roasted Corn", "Red Onions"],
+      ingredients: ["Beyond Beef", "Cheese", "Lettuce", "Onions"],
     },
     {
       name: "The FURR-ari",
       imgURL: `https://cdn.shopify.com/s/files/1/0280/2198/1248/products/image_dcb21cd6-520d-4efc-a8c8-b99d07c76660_1024x1024.jpg?v=1595879895`,
       price: "$7.50",
-      ingredients: ["Lobster", "Lettuce", "Red Peppers", "Lime Crema"],
+      ingredients: ["Lobster", "Lettuce", "Peppers", "Lime Crema"],
     },
     {
       name: "The Alley Cat",
       imgURL: `https://s23209.pcdn.co/wp-content/uploads/2019/04/Mexican-Street-TacosIMG_9108-1.jpg`,
       price: "$3.50",
-      ingredients: ["Carne Asada", "Onions", "Cilantro", "Lime"],
+      ingredients: ["Carne Asada", "Onions", "Cilantro"],
     },
-    {
-      name: "The 9 lives",
-      imgURL: `https://scontent-lax3-2.xx.fbcdn.net/v/t1.6435-9/66440312_880132779024177_4777095714486353920_n.jpg?_nc_cat=101&ccb=1-5&_nc_sid=9267fe&_nc_ohc=3Cv73wD9VlMAX-11fqO&_nc_ht=scontent-lax3-2.xx&oh=281aa1f4745c7443139d60c083c99b49&oe=61662C89`,
-      price: "$10.00",
-      ingredients: [
-        "Vanilla Ice Cream",
-        "Chocolate Syrup",
-        "Whipped Cream",
-        "M & M's",
-        "Waffle Cone",
-        "Churros",
-      ],
-    },
+    // {
+    //   name: "The 9 lives",
+    //   imgURL: `https://scontent-lax3-2.xx.fbcdn.net/v/t1.6435-9/66440312_880132779024177_4777095714486353920_n.jpg?_nc_cat=101&ccb=1-5&_nc_sid=9267fe&_nc_ohc=3Cv73wD9VlMAX-11fqO&_nc_ht=scontent-lax3-2.xx&oh=281aa1f4745c7443139d60c083c99b49&oe=61662C89`,
+    //   price: "$10.00",
+    //   ingredients: [
+    //     "Vanilla Ice Cream",
+    //     "Chocolate Syrup",
+    //     "Whipped Cream",
+    //     "M & M's",
+    //     "Waffle Cone",
+    //     "Churros",
+    //   ],
+    // },
     {
       name: "TaCato Sunrise",
       imgURL:
@@ -214,12 +210,11 @@ const insertData = async () => {
       price: "$2.99",
       ingredients: [
         "Eggs",
-        "Refried Beans",
         "Cilantro",
         "Avocado",
         "Salsa",
-        "Cotija Cheese",
-        "Jalapeno Slices",
+        "Cheese",
+        "Jalapenos",
       ],
     },
     {
@@ -229,9 +224,7 @@ const insertData = async () => {
       price: "$3.99",
       ingredients: [
         "Shrimp",
-        "Smoky Chipotle",
-        "Chili powder",
-        "Taco Slaw",
+        "Lettuce",
         "Slaws Dressing",
       ],
     },
@@ -248,10 +241,9 @@ const insertData = async () => {
         "https://res.cloudinary.com/otisg/image/upload/v1631708333/ChickenTaco_gtgtln.jpg",
       price: "$2.99",
       ingredients: [
-        "Chili Powder",
-        "Garlic Powder",
         "Chicken",
         "Pico de Gallo",
+        "Onions"
       ],
     },
     {
