@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import { getMenuItems } from "../../services/menuItems";
 import "./Menu.css";
 import { makeStyles } from "@material-ui/core/styles";
@@ -30,7 +29,7 @@ function Menu(props) {
     <Layout user={props.user}>
       <div className="items">
         <div className={classesGrid.gridRoot}>
-          <Grid container spacing={3} justifyContent="center">
+          <Grid container spacing={8} justifyContent="center">
             {menu.map((menuItem, index) => {
               return (
                 <MenuItem
