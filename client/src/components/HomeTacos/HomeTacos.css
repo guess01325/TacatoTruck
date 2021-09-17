@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Short+Stack&display=swap");
 
 .carousel-images {
-  width: 600px;
+  width: 500px;
   height: 600px;
 }
 
@@ -9,11 +9,10 @@
   background-color: #edb345;
   opacity: 0.8;
   border-radius: 15px 50px;
-  border-width: 11px;
   font-weight: bolder;
   color: #ba0014;
   font-family: "Short Stack", cursive;
-  max-width: 80%;
+  max-width: 65%;
   margin: 0 auto;
 }
 
