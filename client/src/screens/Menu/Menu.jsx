@@ -39,6 +39,9 @@ function Menu(props) {
                   ingredients={menuItem.ingredients}
                   id={menuItem._id}
                   key={index}
+                  cartItems={props.cartItems}
+                  setCartItems={props.setCartItems}
+                  user={props.user}
                 />
               );
             })}

@@ -172,13 +172,14 @@ export const getUserCart = async (req, res) => {
 
 export const addUserCartItem = async (req, res) => {
   try {
-    console.log(req.body)
     const user = await User.findById(req.params.id);
     if (await User.findById(req.params.id)) {
       const findItem = await MenuItem.findById(req.params.cartItemId)
       const cartItem = await user.cart.push(findItem);
-      user.save();
-      res.status(200).json(cartItem);
+      await user.save();
+      if (cartItem) {
+        return res.status(201).json(cartItem);
+      }
     }
     throw new Error(`User ${req.params.id} does not exist!`);
   } catch (error) {
