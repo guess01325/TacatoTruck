@@ -61,7 +61,7 @@ export const getUserMenuItem = async (userId, menuItemId) => {
 
 export const getUserCart = async (userId) => {
   try {
-    const response = await api.get(`/users/${userId}/cart`)
+    const response = await api.get(`/users/${userId}/cart/`)
     return response.data
   } catch (error) {
     throw error

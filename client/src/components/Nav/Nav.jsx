@@ -1,5 +1,5 @@
 import "./Nav.css";
-import { useState, anchor } from "react";
+import { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
@@ -14,6 +14,7 @@ import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
 import InboxIcon from "@material-ui/icons/MoveToInbox";
 import MailIcon from "@material-ui/icons/Mail";
+import Cart from "../Cart/Cart"
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -78,7 +79,6 @@ const alwaysOptions = (
 const Nav = ({ user }) => {
   const classes = useStyles();
   const [drawer, setDrawer] = useState(false);
-  const [cart, setCart] = useState([]);
 
   const toggleDrawer = (open) => (event) => {
     if (
@@ -88,11 +88,8 @@ const Nav = ({ user }) => {
     ) {
       return;
     }
-
     setDrawer(open);
   };
-
-  console.log(user);
 
   const list = () => (
     <div
@@ -115,6 +112,7 @@ const Nav = ({ user }) => {
           </ListItem>
         ))}
       </List>
+      <Cart user={user}/>
     </div>
   );
 
