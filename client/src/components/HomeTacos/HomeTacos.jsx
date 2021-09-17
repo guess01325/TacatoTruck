@@ -27,7 +27,7 @@ function HomeTacos() {
       {menu.map((menuItem) => (
         <Carousel.Item>
           <img
-            className="d-block w-100"
+            // className="d-block w-100"
             src={menuItem.imgURL}
             alt={`${menuItem.name} slide`}
           />

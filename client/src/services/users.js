@@ -58,3 +58,30 @@ export const getUserMenuItem = async (userId, menuItemId) => {
     throw error
   }
 }
+
+export const getUserCart = async (userId) => {
+  try {
+    const response = await api.get(`/users/${userId}/cart`)
+    return response.data
+  } catch (error) {
+    throw error
+  }
+}
+
+export const addUserCartItem = async (userId, menuItemId) => {
+  try {
+    const response = await api.post(`/users/${userId}/cart/${menuItemId}`)
+    return response.data
+  } catch (error) {
+    throw error
+  }
+}
+
+export const deleteUserCartItem = async (userId, menuItemId) => {
+  try {
+    const response = await api.post(`/users/${userId}/cart/${menuItemId}`)
+    return response.data
+  } catch (error) {
+    throw error
+  }
+}
