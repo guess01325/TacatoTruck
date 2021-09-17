@@ -33,7 +33,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 0px 20px;
+  /* padding: 0px 20px; */
   position: relative;
   height: 350px;
   top: 45px;
@@ -45,7 +45,7 @@
   align-items: center;
   justify-content: center;
   height: 300px;
-  padding: 0px 20px;
+  /* padding: 0px 20px; */
   margin-top: 90px;
   border-radius: 15%;
 }
@@ -60,7 +60,7 @@
 .taco-detail-container img {
   width: 350px;
   height: 375px;
-  padding: 0px 20px;
+  /* padding: 0px 20px; */
   margin-top: 130px;
 }
 

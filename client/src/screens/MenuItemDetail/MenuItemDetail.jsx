@@ -21,7 +21,6 @@ function MenuItemDetail(props) {
   const [ingredientsState, setIngredientsState] = useState(
     new Array(allIngredients.length).fill(false)
   );
-  console.log(ingredientsState);
   useEffect(() => {
     const fetchItem = async () => {
       const item = await getMenuItem(id);
