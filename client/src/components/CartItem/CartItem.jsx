@@ -1,5 +1,7 @@
 import "./CartItem.css";
 import Button from "@material-ui/core/Button";
+import IconButton from "@material-ui/core/IconButton";
+import DeleteIcon from '@material-ui/icons/Delete';
 import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme) => ({
@@ -14,31 +16,45 @@ const useStyles = makeStyles((theme) => ({
 
 function CartItem(props) {
   const classes = useStyles();
+
+  let itemIngredients = "";
+  props.item.ingredients.map((ingredient) => {
+    itemIngredients += ingredient + " ";
+  });
+
   return (
     <div className="cartItemWrapper">
       <div className="cartDiv">
         <h3>{props.item.name}</h3>
         <div className="information">
           <p>Price: {props.item.price}</p>
+          <p>{itemIngredients}</p>
+          <IconButton
+            edge="end"
+            aria-label="delete"
+            onClick={() => props.removeCartItem(props.item._id)}
+          >
+            <DeleteIcon />
+          </IconButton>
         </div>
         <div className="buttons">
-          <Button
+          {/* <Button
             size="small"
             disableElevation
             variant="contained"
             onClick={() => props.removeCartItem(props.item._id)}
           >
             -
-          </Button>
+          </Button> */}
           {/* <p>{item.amount}</p> */}
-          <Button
+          {/* <Button
             size="small"
             disableElevation
             variant="contained"
             onClick={() => props.addCartItem(props.item._id)}
           >
             +
-          </Button>
+          </Button> */}
         </div>
       </div>
       <img

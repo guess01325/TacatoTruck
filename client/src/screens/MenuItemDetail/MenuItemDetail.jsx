@@ -8,6 +8,8 @@ import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Checkbox from "@material-ui/core/Checkbox";
 import allIngredients from "../../utils/ingredients";
 // import useMediaQuery from '@mui/material/useMediaQuery';
+import Button from "@material-ui/core/Button";
+import { addUserCartItem } from "../../services/users"
 
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Ranchers&display=swap');
@@ -44,6 +46,11 @@ function MenuItemDetail(props) {
   //   currentArray.splice(index, 1, newState);
   //   setIngredientsState([...currentArray]);
   // };
+
+  const addCartItem = async (id) => {
+    await addUserCartItem(props.user.id, id)
+  };
+
   const handleOnChange = (position) => {
     const updatedIngredientState = ingredientsState.map((item, index) =>
       index === position ? !item : item
@@ -77,6 +84,13 @@ function MenuItemDetail(props) {
                     />
                   </>
                 ))}
+                <Button
+            id="order-button"
+            onClick={() => addCartItem(props.id)}
+            size="medium"
+          >
+            Order Meow
+          </Button>
               </FormGroup>
             </div>
           </div>
@@ -85,6 +99,5 @@ function MenuItemDetail(props) {
     </Layout>
   );
 }
-  
 
 export default MenuItemDetail;

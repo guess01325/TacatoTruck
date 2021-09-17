@@ -101,7 +101,7 @@ function Footer() {
               <h6>Otis Guess</h6>
             </div>
           </div>
-          <Copyright />
+          {/* <Copyright /> */}
         </Container>
       </Box>
     </Box>

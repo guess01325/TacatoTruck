@@ -34,6 +34,11 @@ const useStyles = makeStyles((theme) => ({
   list: {
     width: 550,
   },
+  payButton: {
+    backgroundColor: "#8E443D",
+    fontFamily: "Ranchers, cursive",
+    color: "#e7af00",
+  }
 }));
 
 const authenticatedOptions = (
@@ -135,7 +140,7 @@ const Nav = (props) => {
           </ListItem>
         ))}
       </List>
-      <h2>Total: ${totalPriceCart.toFixed(2)}</h2> <Button>Pay Meow</Button>
+      <h2>Total: ${totalPriceCart.toFixed(2)} <a className="payLink" target="_blank" href="https://www.aspca.org/ways-to-give"><Button className={classes.payButton}>Pay Meow</Button></a></h2>
     </div>
   );
 

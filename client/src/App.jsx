@@ -62,9 +62,9 @@ function App() {
           </Route>
           <Route exact path="/menu/:id">
             {user ? (
-              <MenuItemDetailEdit user={user} />
+              <MenuItemDetailEdit user={user} cartItems={cartItems} setCartItems={setCartItems}/>
             ) : (
-              <MenuItemDetail user={user} />
+              <MenuItemDetail user={user} cartItems={cartItems} setCartItems={setCartItems}/>
             )}
           </Route>
           <Route path="/create-taco">
