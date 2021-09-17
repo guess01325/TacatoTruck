@@ -7,7 +7,6 @@ import FormGroup from "@material-ui/core/FormGroup";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Checkbox from "@material-ui/core/Checkbox";
 import allIngredients from "../../utils/ingredients";
-// import useMediaQuery from '@mui/material/useMediaQuery';
 import Button from "@material-ui/core/Button";
 import { addUserCartItem } from "../../services/users"
 
@@ -40,12 +39,6 @@ function MenuItemDetail(props) {
     const index = allIngredients.indexOf(ingredient);
     ingredientsState[index] = true;
   });
-  // const handleChange = (index) => {
-  //   const currentArray = ingredientsState;
-  //   const newState = !ingredientsState[index];
-  //   currentArray.splice(index, 1, newState);
-  //   setIngredientsState([...currentArray]);
-  // };
 
   const addCartItem = async (id) => {
     await addUserCartItem(props.user.id, id)
@@ -74,9 +67,6 @@ function MenuItemDetail(props) {
                       control={
                         <Checkbox
                           checked={ingredientsState[index]}
-                          onChange={() => {
-                            handleOnChange(index);
-                          }}
                           name={ingredient}
                         />
                       }
