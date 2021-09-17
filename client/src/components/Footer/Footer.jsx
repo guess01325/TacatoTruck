@@ -138,7 +138,7 @@ function Footer() {
             </div>
             {/* </Typography> */}
           </div>
-          <Copyright />
+          {/* <Copyright /> */}
         </Container>
       </Box>
     </Box>

@@ -5,6 +5,11 @@ nav a {
   color: #e7af00;
 }
 
+.payLink {
+  color: inherit;
+  text-decoration: none;
+}
+
 .titleYellow {
   color: #e7af00;
 }

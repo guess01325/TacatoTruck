@@ -3,6 +3,7 @@
 .carousel-images {
   width: 600px;
   height: 600px;
+  border-radius: 25px;
 }
 
 .carousel-text {
