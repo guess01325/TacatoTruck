@@ -16,14 +16,6 @@
   box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.3);
   transition: all 2s ease;
 }
-/* .catInHat{
-
-} */
-
-/* .catSignUp{
- align-self: flex-end;   
-} */
-
 
 .formSignUpContainer {
   align-self: center;
@@ -71,7 +63,6 @@
 .formSignUpContainer form button:hover {
   box-shadow: 3px 8px 16px rgba(0, 0, 0, 0.5);
 }
-
 
 .formSignUpContainer form button {
   width: 50%;
