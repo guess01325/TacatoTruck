@@ -10,6 +10,7 @@ router.get("/users/:id", controllers.getUser);
 
 router.get("/users/:id/cart", controllers.getUserCart);
 router.post("/users/:id/cart/:cartItemId", controllers.addUserCartItem);
+// router.post("/users/:id/cart/", controllers.addUserCartItem);
 router.delete("/users/:id/cart/:cartItemId", controllers.deleteUserCartItem);
 router.get("/users/:id/menu", controllers.getUserMenuItems);
 // router.get('/users/:id/menu/:menuItemId', controllers.getUserMenuItem)

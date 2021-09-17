@@ -13,6 +13,7 @@ import Home from "./screens/Home/Home";
 import "@fontsource/roboto";
 import { createTheme } from "@material-ui/core/styles";
 import { ThemeProvider } from "@material-ui/styles";
+import { getUserCart } from "./services/users";
 
 
 const theme = createTheme({
@@ -57,7 +58,7 @@ function App() {
             <Home user={user} />
           </Route>
           <Route exact path="/menu">
-            <Menu user={user} />
+            <Menu user={user} cartItems={cartItems} setCartItems={setCartItems}/>
           </Route>
           <Route exact path="/menu/:id">
             {user ? (

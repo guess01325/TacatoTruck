@@ -14,11 +14,12 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function CartItem(props) {
-  console.log(props.item._id)
+  console.log(props.item._id);
   const classes = useStyles();
   return (
-    <Container className={classes.cartItemWrapper}>
-      <div>
+    // <Container className={classes.cartItemWrapper}>
+    <div className="cartItemWrapper">
+      <div className="cartDiv">
         <h3>{props.item.name}</h3>
         <div className="information">
           <p>Price: {props.item.price}</p>
@@ -43,8 +44,13 @@ function CartItem(props) {
           </Button>
         </div>
       </div>
-      <img className="cartItemImg" src={props.item.imgURL} alt={props.item.name} />
-    </Container>
+      <img
+        className="cartItemImg"
+        src={props.item.imgURL}
+        alt={props.item.name}
+      />
+    </div>
+    // </Container>
   );
 }
 

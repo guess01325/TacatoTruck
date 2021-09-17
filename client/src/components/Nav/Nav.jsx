@@ -127,29 +127,13 @@ const Nav = (props) => {
       <Divider />
       <List>
         {cartItems.map((item) => (
-          // <ListItem button key={text}>
-          //   <ListItemIcon>
-          //     {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-          //   </ListItemIcon>
-          //   <ListItemText primary={text} />
-          // </ListItem>
-          // <ListItem>
-          //   <ListItemIcon>
-          //     <Typography variant="h6" gutterBottom align="center">
-          //       {item.name}
-          //     </Typography>
-          //   </ListItemIcon>
-          //   <ListItemText />
-          // </ListItem>
           <ListItem>
             {cartItems.length === 0 ? <p>No items in cart.</p> : null}
-            {cartItems.map((item) => (
               <CartItem
                 item={item}
                 addCartItem={addCartItem}
                 removeCartItem={removeCartItem}
               />
-            ))}
           </ListItem>
         ))}
       </List>
