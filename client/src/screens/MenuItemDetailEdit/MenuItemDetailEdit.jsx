@@ -2,14 +2,13 @@ import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import "./MenuItemDetailEdit.css";
 import Layout from "../../components/Layout/Layout";
-import { getMenuItem } from "../../services/menuItems";
+import { getMenuItem, updateMenuItem } from "../../services/menuItems";
 import FormGroup from "@material-ui/core/FormGroup";
-import FormControlLabel from "@material-ui/core/FormControlLabel";
-import Checkbox from "@material-ui/core/Checkbox";
 import allIngredients from "../../utils/ingredients";
-// import useMediaQuery from '@mui/material/useMediaQuery';
 import Button from "@material-ui/core/Button";
-import { addUserCartItem } from "../../services/users"
+import { addUserCartItem } from "../../services/users";
+import TextField from "@material-ui/core/TextField";
+import MenuItem from "@material-ui/core/MenuItem";
 
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Ranchers&display=swap');
@@ -19,14 +18,18 @@ function MenuItemDetail(props) {
   const [item, setItem] = useState(null);
   const [isLoaded, setLoaded] = useState(false);
   const { id } = useParams();
-  const [ingredientsState, setIngredientsState] = useState(
-    new Array(allIngredients.length).fill(false)
-  );
-  console.log(ingredientsState);
+  const [ingredientsState, setIngredientsState] = useState([]);
+  const [isUpdated, setUpdated] = useState(false);
+
+  const [menuItem, setMenuItem] = useState({
+    ingredients: ingredientsState,
+  });
+
   useEffect(() => {
     const fetchItem = async () => {
       const item = await getMenuItem(id);
       setItem(item);
+      setIngredientsState(item.ingredients);
       setLoaded(true);
     };
     fetchItem();
@@ -36,29 +39,34 @@ function MenuItemDetail(props) {
     return <h1>Loading...</h1>;
   }
 
-  item.ingredients.map((ingredient) => {
-    const index = allIngredients.indexOf(ingredient);
-    ingredientsState[index] = true;
-  });
-  // const handleChange = (index) => {
-  //   const currentArray = ingredientsState;
-  //   const newState = !ingredientsState[index];
-  //   currentArray.splice(index, 1, newState);
-  //   setIngredientsState([...currentArray]);
-  // };
-
-  console.log(item)
-
   const addCartItem = async (id) => {
-    await addUserCartItem(props.user.id, id)
+    await addUserCartItem(props.user.id, id);
   };
 
-  const handleOnChange = (position) => {
-    const updatedIngredientState = ingredientsState.map((item, index) =>
-      index === position ? !item : item
+  const handleFieldChange = (event) => {
+    console.log(event);
+    event.persist();
+    setIngredientsState(
+      ingredientsState.concat(
+        event.target.type === "checkbox"
+          ? event.target.checked
+          : event.target.value
+      )
     );
-    setIngredientsState(updatedIngredientState);
+    const { name } = event.target;
+    setMenuItem({
+      ...menuItem,
+      [name]: ingredientsState,
+    });
+    console.log(ingredientsState);
   };
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    const updated = await updateMenuItem(id, menuItem);
+    setUpdated(updated);
+  };
+
   return (
     <Layout user={props.user}>
       <div className="formatContainer">
@@ -70,29 +78,33 @@ function MenuItemDetail(props) {
               <div className="price">{`${item.price}`}</div>
 
               <FormGroup className="check-box" row>
-                {allIngredients.map((ingredient, index) => (
-                  <>
-                    <FormControlLabel
-                      control={
-                        <Checkbox
-                          checked={ingredientsState[index]}
-                          onChange={() => {
-                            handleOnChange(index);
-                          }}
-                          name={ingredient}
-                        />
-                      }
-                      label={ingredient}
-                    />
-                  </>
-                ))}
+                <TextField
+                  select
+                  className="create-ingredients"
+                  name="ingredients"
+                  id="ingredients"
+                  variant="outlined"
+                  label="Ingredients"
+                  onChange={handleFieldChange}
+                  SelectProps={{
+                    multiple: true,
+                    value: ingredientsState,
+                  }}
+                >
+                  {allIngredients.map((ingredient) => (
+                    <MenuItem value={ingredient}>{ingredient}</MenuItem>
+                  ))}
+                </TextField>
+                <Button id="order-button" onClick={handleSubmit} size="medium">
+                  Update Taco
+                </Button>
                 <Button
-            id="order-button"
-            onClick={() => addCartItem(item._id)}
-            size="medium"
-          >
-            Order Meow
-          </Button>
+                  id="order-button"
+                  onClick={() => addCartItem(item._id)}
+                  size="medium"
+                >
+                  Order Meow
+                </Button>
               </FormGroup>
             </div>
           </div>
