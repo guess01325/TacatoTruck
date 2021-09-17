@@ -113,7 +113,7 @@ const insertData = async () => {
         "Eggs",
         "Bacon",
         "Cheese",
-        "Salsa",
+        "Pico de Gallo",
       ],
     },
     {
@@ -190,19 +190,16 @@ const insertData = async () => {
       price: "$3.50",
       ingredients: ["Carne Asada", "Onions", "Cilantro"],
     },
-    // {
-    //   name: "The 9 lives",
-    //   imgURL: `https://scontent-lax3-2.xx.fbcdn.net/v/t1.6435-9/66440312_880132779024177_4777095714486353920_n.jpg?_nc_cat=101&ccb=1-5&_nc_sid=9267fe&_nc_ohc=3Cv73wD9VlMAX-11fqO&_nc_ht=scontent-lax3-2.xx&oh=281aa1f4745c7443139d60c083c99b49&oe=61662C89`,
-    //   price: "$10.00",
-    //   ingredients: [
-    //     "Vanilla Ice Cream",
-    //     "Chocolate Syrup",
-    //     "Whipped Cream",
-    //     "M & M's",
-    //     "Waffle Cone",
-    //     "Churros",
-    //   ],
-    // },
+    {
+      name: "The 9 lives",
+      imgURL: `https://scontent-lax3-2.xx.fbcdn.net/v/t1.6435-9/66440312_880132779024177_4777095714486353920_n.jpg?_nc_cat=101&ccb=1-5&_nc_sid=9267fe&_nc_ohc=3Cv73wD9VlMAX-11fqO&_nc_ht=scontent-lax3-2.xx&oh=281aa1f4745c7443139d60c083c99b49&oe=61662C89`,
+      price: "$10.00",
+      ingredients: [
+        "Vanilla Ice Cream",
+        "Chocolate Sprinkles",
+        "Whipped Cream",
+      ],
+    },
     {
       name: "TaCato Sunrise",
       imgURL:
