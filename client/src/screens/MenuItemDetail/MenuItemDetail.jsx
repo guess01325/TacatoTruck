@@ -10,8 +10,8 @@ import allIngredients from "../../utils/ingredients";
 // import useMediaQuery from '@mui/material/useMediaQuery';
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Ranchers&display=swap');
-</style>
+  @import url('https://fonts.googleapis.com/css2?family=Ranchers&display=swap');
+</style>;
 
 function MenuItemDetail(props) {
   const [item, setItem] = useState(null);
@@ -20,7 +20,6 @@ function MenuItemDetail(props) {
   const [ingredientsState, setIngredientsState] = useState(
     new Array(allIngredients.length).fill(false)
   );
- 
   console.log(ingredientsState);
   useEffect(() => {
     const fetchItem = async () => {
@@ -41,7 +40,7 @@ function MenuItemDetail(props) {
   // });
   const handleChange = (index) => {
     const currentArray = ingredientsState;
-    const newState = !ingredientsState[index]
+    const newState = !ingredientsState[index];
     currentArray.splice(index, 1, newState);
     setIngredientsState([...currentArray]);
   };
