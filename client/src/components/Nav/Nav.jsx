@@ -28,6 +28,7 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
     fontSize: 32,
     letterSpacing: ".2rem",
+    fontSize: 45,
   },
   titleImage: {
     width: 80,
@@ -91,7 +92,7 @@ const Nav = ({ user }) => {
     setDrawer(open);
   };
 
-  console.log(user)
+  console.log(user);
 
   const list = () => (
     <div

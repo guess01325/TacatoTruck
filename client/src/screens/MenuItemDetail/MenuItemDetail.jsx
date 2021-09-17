@@ -7,6 +7,8 @@ import FormGroup from "@material-ui/core/FormGroup";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Checkbox from "@material-ui/core/Checkbox";
 import allIngredients from "../../utils/ingredients";
+// import useMediaQuery from '@mui/material/useMediaQuery';
+
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Ranchers&display=swap');
 </style>
@@ -18,6 +20,7 @@ function MenuItemDetail(props) {
   const [ingredientsState, setIngredientsState] = useState(
     new Array(allIngredients.length).fill(false)
   );
+ 
   console.log(ingredientsState);
   useEffect(() => {
     const fetchItem = async () => {
