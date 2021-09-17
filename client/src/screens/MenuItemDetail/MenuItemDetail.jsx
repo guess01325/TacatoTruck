@@ -47,37 +47,40 @@ function MenuItemDetail(props) {
   };
   return (
     <Layout user={props.user}>
-      <div className="detail-container">
-        <div className="taco-detail-container">
-          <img className="item-1" src={item.imgURL} alt={item.name} />
-          <div className="info-container">
-            <div className="name">{item.name}</div>
-            <div className="price">{`${item.price}`}</div>
-            
-            <FormGroup className="check-box" row>
-              {allIngredients.map((ingredient, index) => (
-                <>
-                  {console.log(ingredient)}
-                  <FormControlLabel 
-                    control={
-                      <Checkbox 
-                        checked={ingredientsState[index]}
-                        onChange={() => {
-                          handleChange(index);
-                        }}
-                        name={ingredient}
-                      />
-                    }
-                    label={ingredient}
-                  />
-                </>
-              ))}
-            </FormGroup>
+      <div className="formatContainer">
+        <div className="detail-container">
+          <div className="taco-detail-container">
+            <img className="item-1" src={item.imgURL} alt={item.name} />
+            <div className="info-container">
+              <div className="name">{item.name}</div>
+              <div className="price">{`${item.price}`}</div>
+
+              <FormGroup className="check-box" row>
+                {allIngredients.map((ingredient, index) => (
+                  <>
+                    {console.log(ingredient)}
+                    <FormControlLabel
+                      control={
+                        <Checkbox
+                          checked={ingredientsState[index]}
+                          onChange={() => {
+                            handleChange(index);
+                          }}
+                          name={ingredient}
+                        />
+                      }
+                      label={ingredient}
+                    />
+                  </>
+                ))}
+              </FormGroup>
+            </div>
           </div>
         </div>
       </div>
     </Layout>
   );
 }
+  
 
 export default MenuItemDetail;
