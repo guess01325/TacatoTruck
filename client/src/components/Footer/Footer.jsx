@@ -28,7 +28,7 @@ function Copyright() {
   return (
     <Typography variant="body2" color="text.secondary" align="center">
       {"Copyright © "}
-      <Link color="inherit" href="https://material-ui.com/">
+      <Link color="inherit" href="/menu">
         TaCato Truck
       </Link>{" "}
       {new Date().getFullYear()}
@@ -40,41 +40,6 @@ function Copyright() {
 function Footer() {
   const classes = useStyles();
   return (
-    // <footer>
-    //   <AppBar position="fixed" color="secondary" className={classes.appBar}>
-    //     <Toolbar>
-    //       <a href="https://github.com/Nafff">
-    //         <img
-    //           className={classes.octoCat}
-    //           src="https://res.cloudinary.com/dy6xpqkkj/image/upload/v1631547003/Tactato%20Truck/download-1-removebg-preview_1_avlm57.png"
-    //           alt="github octocat"
-    //         />
-    //       </a>
-    //       <a href="https://github.com/CourtneyAJackson">
-    //         <img
-    //           className={classes.octoCat}
-    //           src="https://res.cloudinary.com/dy6xpqkkj/image/upload/v1631547003/Tactato%20Truck/download-1-removebg-preview_1_avlm57.png"
-    //           alt="github octocat"
-    //         />
-    //       </a>
-    //       <p>Check Meowt</p>
-    //       <a href="https://github.com/eileen813">
-    //         <img
-    //           className={classes.octoCat}
-    //           src="https://res.cloudinary.com/dy6xpqkkj/image/upload/v1631547003/Tactato%20Truck/download-1-removebg-preview_1_avlm57.png"
-    //           alt="github octocat"
-    //         />
-    //       </a>
-    //       <a href="https://github.com/guess01325">
-    //         <img
-    //           className={classes.octoCat}
-    //           src="https://res.cloudinary.com/dy6xpqkkj/image/upload/v1631547003/Tactato%20Truck/download-1-removebg-preview_1_avlm57.png"
-    //           alt="github octocat"
-    //         />
-    //       </a>
-    //     </Toolbar>
-    //   </AppBar>
-    // </footer>
     <Box
       className={classes.boxFooter}
       sx={{
@@ -94,7 +59,6 @@ function Footer() {
       >
         <Container maxWidth="sm">
           <div className="octocats-div">
-            {/* <Typography variant="body1"> */}
             <div>
               <a href="https://github.com/Nafff" target="_blank">
                 <img
@@ -136,7 +100,6 @@ function Footer() {
               </a>
               <h6>Otis Guess</h6>
             </div>
-            {/* </Typography> */}
           </div>
           <Copyright />
         </Container>
