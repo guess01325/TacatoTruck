@@ -34,15 +34,21 @@ function MenuItemDetail(props) {
     return <h1>Loading...</h1>;
   }
 
-  // item.ingredients.map((ingredient) => {
-  //   const index = allIngredients.indexOf(ingredient);
-  //   ingredientsState[index] = true;
-  // });
-  const handleChange = (index) => {
-    const currentArray = ingredientsState;
-    const newState = !ingredientsState[index];
-    currentArray.splice(index, 1, newState);
-    setIngredientsState([...currentArray]);
+  item.ingredients.map((ingredient) => {
+    const index = allIngredients.indexOf(ingredient);
+    ingredientsState[index] = true;
+  });
+  // const handleChange = (index) => {
+  //   const currentArray = ingredientsState;
+  //   const newState = !ingredientsState[index];
+  //   currentArray.splice(index, 1, newState);
+  //   setIngredientsState([...currentArray]);
+  // };
+  const handleOnChange = (position) => {
+    const updatedIngredientState = ingredientsState.map((item, index) =>
+      index === position ? !item : item
+    );
+    setIngredientsState(updatedIngredientState);
   };
   return (
     <Layout user={props.user}>
@@ -57,13 +63,12 @@ function MenuItemDetail(props) {
               <FormGroup className="check-box" row>
                 {allIngredients.map((ingredient, index) => (
                   <>
-                    {console.log(ingredient)}
                     <FormControlLabel
                       control={
                         <Checkbox
                           checked={ingredientsState[index]}
                           onChange={() => {
-                            handleChange(index);
+                            handleOnChange(index);
                           }}
                           name={ingredient}
                         />
