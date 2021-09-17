@@ -10,3 +10,20 @@
   align-items: center;
   font-family: "Short Stack", cursive;
 }
+
+.tacato-copyright {
+  display: flex;
+  text-align: center;
+}
+
+@media screen and (max-width: 650px) {
+  .student {
+    font-size: 10px;
+    text-align: center;
+  }
+
+  .tacato-copyright,
+  .check-meowt {
+    font-size: 18px;
+  }
+}

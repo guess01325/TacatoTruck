@@ -26,14 +26,14 @@ const useStyles = makeStyles((theme) => ({
 
 function Copyright() {
   return (
-    <Typography variant="body2" color="text.secondary" align="center">
-      {"Copyright © "}
-      <Link color="inherit" href="/menu">
-        TaCato Truck
-      </Link>{" "}
-      {new Date().getFullYear()}
-      {"."}
-    </Typography>
+      <Typography variant="body2" color="text.secondary" align="center">
+        {"Copyright © "}
+        <Link color="inherit" href="/menu">
+          TaCato Truck
+        </Link>{" "}
+        {new Date().getFullYear()}
+        {"."}
+      </Typography>
   );
 }
 
@@ -67,7 +67,7 @@ function Footer() {
                   alt="github octocat"
                 />
               </a>
-              <h6>Jake Adick</h6>
+              <h6 className="student">Jake Adick</h6>
             </div>
             <div>
               <a href="https://github.com/CourtneyAJackson" target="_blank">
@@ -77,7 +77,7 @@ function Footer() {
                   alt="github octocat"
                 />
               </a>
-              <h6>Courtney Jackson</h6>
+              <h6 className="student">Courtney Jackson</h6>
             </div>
             <p className="check-meowt">Check Meowt</p>
             <div>
@@ -88,7 +88,7 @@ function Footer() {
                   alt="github octocat"
                 />
               </a>
-              <h6>Eileen Olivera</h6>
+              <h6 className="student">Eileen Olivera</h6>
             </div>
             <div>
               <a href="https://github.com/guess01325" target="_blank">
@@ -98,10 +98,10 @@ function Footer() {
                   alt="github octocat"
                 />
               </a>
-              <h6>Otis Guess</h6>
+              <h6 className="student">Otis Guess</h6>
             </div>
           </div>
-          {/* <Copyright /> */}
+          <Copyright />
         </Container>
       </Box>
     </Box>
