@@ -170,14 +170,39 @@ export const getUserCart = async (req, res) => {
   }
 };
 
-export const deleteUserCartItem = async (req, res) => {
-  const user = User.findById(req.params.id)
-  if (await User.findById(req.params.id)) {
-    const deleted = await user.cart.findByIdAndDelete(req.params.cartItemId)
-    if (deleted) {
-      return res.status(200).send("Menu item deleted");
+export const addUserCartItem = async (req, res) => {
+  try {
+    const user = await User.findById(req.params.id);
+    if (await User.findById(req.params.id)) {
+      const findItem = await MenuItem.findById(req.params.cartItemId)
+      const cartItem = await user.cart.push(findItem);
+      await user.save();
+      if (cartItem) {
+        return res.status(201).json(cartItem);
+      }
     }
-    throw new Error(`Menu item ${req.params.menuItemId} not found`);
+    throw new Error(`User ${req.params.id} does not exist!`);
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ error: error.message });
   }
-  throw new Error(``)
-}
+};
+
+export const deleteUserCartItem = async (req, res) => {
+  try {
+    const user = await User.findById(req.params.id);
+    if (await User.findById(req.params.id)) {
+      const deletedIndex = await user.cart.indexOf(req.params.cartItemId);
+      const deleted = await user.cart.splice(deletedIndex, 1);
+      user.save();
+      if (deleted) {
+        return res.status(200).send("Menu item deleted");
+      }
+      throw new Error(`Menu item ${req.params.menuItemId} not found`);
+    }
+    throw new Error(`User ${req.params.id} does not exist!`);
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ error: error.message });
+  }
+};

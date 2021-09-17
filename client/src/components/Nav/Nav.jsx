@@ -1,5 +1,5 @@
 import "./Nav.css";
-import { useState, anchor } from "react";
+import { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
@@ -10,10 +10,8 @@ import Drawer from "@material-ui/core/Drawer";
 import List from "@material-ui/core/List";
 import Divider from "@material-ui/core/Divider";
 import ListItem from "@material-ui/core/ListItem";
-import ListItemIcon from "@material-ui/core/ListItemIcon";
-import ListItemText from "@material-ui/core/ListItemText";
-import InboxIcon from "@material-ui/icons/MoveToInbox";
-import MailIcon from "@material-ui/icons/Mail";
+import { getUserCart, addUserCartItem, deleteUserCartItem } from "../../services/users";
+import CartItem from "../CartItem/CartItem"
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -28,13 +26,19 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
     fontSize: 32,
     letterSpacing: ".2rem",
+    fontSize: 45,
   },
   titleImage: {
     width: 80,
   },
   list: {
-    width: 350,
+    width: 550,
   },
+  payButton: {
+    backgroundColor: "#8E443D",
+    fontFamily: "Ranchers, cursive",
+    color: "#e7af00",
+  }
 }));
 
 const authenticatedOptions = (
@@ -74,10 +78,20 @@ const alwaysOptions = (
     </Button>
   </>
 );
-const Nav = ({ user }) => {
+const Nav = (props) => {
   const classes = useStyles();
   const [drawer, setDrawer] = useState(false);
-  const [cart, setCart] = useState([]);
+  const [cartItems, setCartItems] = useState([]);
+
+  useEffect(() => {
+    if (props.user) {
+      const fetchCart = async () => {
+        const userCartItems = await getUserCart(props.user.id);
+        setCartItems(userCartItems);
+      };
+      fetchCart();
+    }
+  }, [drawer, setDrawer]);
 
   const toggleDrawer = (open) => (event) => {
     if (
@@ -87,11 +101,21 @@ const Nav = ({ user }) => {
     ) {
       return;
     }
-
     setDrawer(open);
   };
 
-  console.log(user)
+  const addCartItem = async (id) => {
+    await addUserCartItem(props.user.id, id)
+  };
+
+  const removeCartItem = async (id) => {
+    await deleteUserCartItem(props.user.id, id)
+  };
+
+  let totalPriceCart = 0
+  cartItems.map((item) => {
+    totalPriceCart += parseFloat((item.price).slice(1));
+  })
 
   const list = () => (
     <div
@@ -105,15 +129,18 @@ const Nav = ({ user }) => {
       </Typography>
       <Divider />
       <List>
-        {["All mail", "Trash", "Spam"].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>
-              {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-            </ListItemIcon>
-            <ListItemText primary={text} />
+        {cartItems.map((item) => (
+          <ListItem>
+            {cartItems.length === 0 ? <p>No items in cart.</p> : null}
+              <CartItem
+                item={item}
+                addCartItem={addCartItem}
+                removeCartItem={removeCartItem}
+              />
           </ListItem>
         ))}
       </List>
+      <h2>Total: ${totalPriceCart.toFixed(2)} <a className="payLink" target="_blank" href="https://www.aspca.org/ways-to-give"><Button className={classes.payButton}>Pay Meow</Button></a></h2>
     </div>
   );
 
@@ -131,7 +158,7 @@ const Nav = ({ user }) => {
               <NavLink className="title" to="/">
                 <span className="titleYellow">T</span>
                 <span className="titleRed">a</span>
-                <span className="titleGreen">c</span>
+                <span className="titleGreen">C</span>
                 <span className="titleTortilla">a</span>
                 <span className="titleYellow">t</span>
                 <span className="titleRed">o</span>{" "}
@@ -143,11 +170,13 @@ const Nav = ({ user }) => {
               </NavLink>
             </Typography>
             <div className="links">
-              {user && (
-                <div className="link welcome">Welcome, {user.username}</div>
+              {props.user && (
+                <div className="userGreeting">
+                  You're Pawsome, {props.user.username}
+                </div>
               )}
               {alwaysOptions}
-              {user ? authenticatedOptions : unauthenticatedOptions}
+              {props.user ? authenticatedOptions : unauthenticatedOptions}
             </div>
             <Button onClick={toggleDrawer(true)}>
               <img
@@ -169,4 +198,5 @@ const Nav = ({ user }) => {
     </nav>
   );
 };
+
 export default Nav;

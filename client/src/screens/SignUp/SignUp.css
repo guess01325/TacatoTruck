@@ -1,7 +1,11 @@
+.formatContainer{
+  height: 100vh;
+}
+
 .outterFormSignUpContainer{
   display: flex;
   flex-direction: row-reverse;
-  /* background: darkkhaki; */
+  background: #9DA27A;
   margin-top: 8%;
   margin-left: 10%;
   margin-right: 10%;
@@ -12,19 +16,13 @@
   box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.3);
   transition: all 2s ease;
 }
-.catInHat{
-  display: flex;
-  justify-content: center;
-  
-}
-
 
 .formSignUpContainer {
   align-self: center;
   padding: 1em;
   width: 50%;
   height: 80%;
-  margin: 4em auto;
+  margin: 1em auto;
   border: 2px solid #b0bec5;
   border-radius: 6px;
   box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.3);
@@ -66,7 +64,6 @@
   box-shadow: 3px 8px 16px rgba(0, 0, 0, 0.5);
 }
 
-
 .formSignUpContainer form button {
   width: 50%;
   margin: 1em auto;
@@ -75,15 +72,14 @@
   color: white;
 }
 
-@media all and (min-width:320px)
-and (max-width:900px){
-    .outterFormContainer{
+@media all and (min-width:350px) and (max-width:900px){
+    .outterFormSignUpContainer{
     flex-direction: column-reverse;
-    margin-left: 100px;
-    margin-right: 100px;
-    align-items: flex-end;
+  
     }
-    /* .formSignUpContainer{
-      margin-left: 200px;
-    } */
+    .catSignUp{
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+    }
   }

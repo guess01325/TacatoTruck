@@ -13,6 +13,7 @@ import Home from "./screens/Home/Home";
 import "@fontsource/roboto";
 import { createTheme } from "@material-ui/core/styles";
 import { ThemeProvider } from "@material-ui/styles";
+import { getUserCart } from "./services/users";
 
 
 const theme = createTheme({
@@ -28,6 +29,18 @@ const theme = createTheme({
 
 function App() {
   const [user, setUser] = useState(null);
+  const [cartItems, setCartItems] = useState([]);
+
+  useEffect(() => {
+    if (user) {
+      console.log(user.id);
+      const fetchCart = async () => {
+        const userCartItems = await getUserCart(user.id);
+        setCartItems(userCartItems);
+      };
+      fetchCart();
+    }
+  }, []);
 
   useEffect(() => {
     const getUser = async () => {
@@ -45,13 +58,13 @@ function App() {
             <Home user={user} />
           </Route>
           <Route exact path="/menu">
-            <Menu user={user} />
+            <Menu user={user} cartItems={cartItems} setCartItems={setCartItems}/>
           </Route>
           <Route exact path="/menu/:id">
             {user ? (
-              <MenuItemDetailEdit user={user} />
+              <MenuItemDetailEdit user={user} cartItems={cartItems} setCartItems={setCartItems}/>
             ) : (
-              <MenuItemDetail user={user} />
+              <MenuItemDetail user={user} cartItems={cartItems} setCartItems={setCartItems}/>
             )}
           </Route>
           <Route path="/create-taco">

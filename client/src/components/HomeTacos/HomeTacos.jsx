@@ -3,6 +3,8 @@ import Carousel from "react-bootstrap/Carousel";
 import { useEffect, useState } from "react";
 import { getMenuItems } from "../../services/menuItems";
 
+import "../../components/HomeTacos/HomeTacos.css";
+
 function HomeTacos() {
   const [menu, setMenu] = useState([]);
 
@@ -23,17 +25,19 @@ function HomeTacos() {
   }, []);
 
   return (
-    <Carousel variant="dark">
+    <Carousel>
       {menu.map((menuItem) => (
         <Carousel.Item>
           <img
-            className="d-block w-100"
+            className="carousel-images"
             src={menuItem.imgURL}
             alt={`${menuItem.name} slide`}
           />
           <Carousel.Caption>
-            <h3>{menuItem.name}</h3>
-            <p>{menuItem.price}</p>
+            <div className="carousel-text">
+              <h3> {menuItem.name}</h3>
+              <p>{menuItem.price}</p>
+            </div>
           </Carousel.Caption>
         </Carousel.Item>
       ))}

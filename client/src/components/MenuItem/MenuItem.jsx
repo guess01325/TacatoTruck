@@ -12,6 +12,7 @@ import Grid from "@material-ui/core/Grid";
 import Paper from "@material-ui/core/Paper";
 import { ButtonGroup } from "@material-ui/core";
 import { useHistory } from "react-router-dom";
+import { addUserCartItem } from "../../services/users"
 
 const useStyles = makeStyles({
   root: {
@@ -48,8 +49,8 @@ function MenuItem(props) {
     history.push(`/menu/${props.id}`);
   };
 
-  const handleOrder = () => {
-    history.push(`/`);
+  const addCartItem = async (id) => {
+    await addUserCartItem(props.user.id, id)
   };
 
   return (
@@ -96,7 +97,7 @@ function MenuItem(props) {
                   Modify
                 </Button>
                 {/* </Link> */}
-                <Button id="order-button" onClick={handleOrder} size="medium">
+                <Button id="order-button" onClick={() => addCartItem(props.id)} size="medium">
                   Order Meow
                 </Button>
               </ButtonGroup>

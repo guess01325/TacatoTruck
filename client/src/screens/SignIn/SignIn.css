@@ -1,13 +1,15 @@
-
-
-.catInHat{
-  display: flex;
-  justify-content: center;
-  /* background: yellow */
+.formatContainer {
+  height: 100vh;
 }
 
+.catInHat {
+  display: flex;
+  justify-content: center;
+  /* background: yellow; */
+  flex-direction: column;
+}
 
-.formContainer {
+.formSignInContainer {
   align-self: center;
   padding: 1em;
   width: 50%;
@@ -16,18 +18,16 @@
   border: 2px solid #b0bec5;
   border-radius: 6px;
   box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.3);
-  background:#9DA27A;
+  background: #9da27a;
 }
 
-
-
-.formContainer h1 {
+.formSignInContainer h1 {
   text-align: center;
   font-size: 40px;
-  font-family: 'Ranchers';
+  font-family: "Ranchers";
 }
 
-.formContainer form {
+.formSignInContainer form {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -35,7 +35,7 @@
   width: 80%;
 }
 
-.formContainer form input {
+.formSignInContainer form input {
   width: 100%;
   padding: 0.6em 1em;
   margin: 0.5em auto;
@@ -44,61 +44,53 @@
   border: 2px solid #e0e0e0;
   outline: none;
   transition: all 0.4s ease;
+  background-color: lightgrey;
 }
 
-.formContainer form input:focus,
-.formContainer form input:active {
+.formSignInContainer form input:focus,
+.formSignInContainer form input:active {
   border: 2px solid #82ada9;
 }
 
-
-.formContainer form button {
+.formSignInContainer form button {
   width: 50%;
   margin: 1em auto;
   background: goldenrod;
- 
 }
 
-.formContainer form button:hover {
+.formSignInContainer form button:hover {
   box-shadow: 3px 8px 16px rgba(0, 0, 0, 0.5);
 }
 
-.formContainer form a {
+.formSignInContainer form a {
   margin: auto;
 }
 
-.formContainer form label {
+.formSignInContainer form label {
   margin-top: 0.6em;
 }
 
-
-.outterContainer{
- display: flex;
+.outterContainer {
+  display: flex;
   flex-direction: row-reverse;
-  background: #9DA27A;
+  background: #9da27a;
   margin-top: 8%;
   margin-left: 10%;
   margin-right: 10%;
   margin-bottom: 5%;
   position: inherit;
-  padding-right: 90px;
+  padding-right: 80px;
   border-radius: 10px;
   box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.3);
   transition: all 2s ease;
 }
-  
-.formContainer label{
-  font-size: 15px;;
+
+.formSignInContainer label {
+  font-size: 15px;
 }
 
-  
-
-@media all and (min-width:320px)
-and (max-width:900px){
-    .outterContainer{
+@media all and (min-width: 350px) and (max-width: 900px) {
+  .outterContainer {
     flex-direction: column-reverse;
-    
-    }
   }
-
- 
+}

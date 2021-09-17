@@ -3,9 +3,7 @@ import { useState } from "react";
 import { signIn } from "../../services/users";
 import { useHistory } from "react-router-dom";
 import Layout from "../../components/Layout/Layout";
-import {Link} from "react-router-dom"
 import Button from "@material-ui/core/Button";
-import Typography from "@material-ui/core/Typography";
 
 
 function SignIn(props) {
@@ -62,7 +60,6 @@ function SignIn(props) {
       );
     } else {
       return (
-        
         <Button
           type="submit"
           fullWidth
@@ -76,63 +73,46 @@ function SignIn(props) {
     }
   };
 
-  function Copyright(props) {
-    return (
-      <Typography
-        variant="body2"
-        color="text.secondary"
-        align="center"
-        {...props}
-      >
-        {"Copyright © "}
-        <Link color="inherit" href="https://mui.com/">
-          Tacoto Truck
-        </Link>{" "}
-        {new Date().getFullYear()}
-        {"."}
-      </Typography>
-    );
-  }
-
   return (
     <Layout user={props.user}>
-      <div className="outterContainer">
-      <div className="formContainer">
-  
-        <h1 className="signInLabel">Sign In</h1>
-        <form onSubmit={onSignIn}>
-          <div className="signInEmail">
-        <label>Email</label>
-        <input
-          required
-          type='text'
-          name='email'
-          value={email}
-          placeholder='Enter Email'
-          onChange={handleChange}
-            />
+      <div className="formatContainer">
+        <div className="outterContainer">
+          <div className="formSignInContainer">
+            <h1 className="signInLabel">Sign In</h1>
+            <form onSubmit={onSignIn}>
+              <div className="signInEmail">
+                <label>Email</label>
+                <input
+                  required
+                  type="text"
+                  name="email"
+                  value={email}
+                  placeholder="Enter Email"
+                  onChange={handleChange}
+                />
+              </div>
+              <div className="signInPw">
+                <label>Password</label>
+                <input
+                  required
+                  name="password"
+                  value={password}
+                  type="password"
+                  placeholder="Password"
+                  onChange={handleChange}
+                />
+              </div>
+
+              {renderError()}
+            </form>
           </div>
-          <div className="signInPw"> 
-        <label>Password</label>
-        <input
-          required
-          name='password'
-          value={password}
-          type='password'
-          placeholder='Password'
-          onChange={handleChange}
-        />
-          </div>
-         
-        {renderError()}
-      </form>
-        </div>
-        <div className="catInHat">
+          <div className="catInHat">
             <img
-                src="https://res.cloudinary.com/dy6xpqkkj/image/upload/v1631547003/Tactato%20Truck/istockphoto-833450608-612x612-removebg-preview_ms3oez.png"
-                alt="cat"
+              src="https://res.cloudinary.com/dy6xpqkkj/image/upload/v1631547003/Tactato%20Truck/istockphoto-833450608-612x612-removebg-preview_ms3oez.png"
+              alt="cat"
             />
           </div>
+        </div>
       </div>
     </Layout>
   );
