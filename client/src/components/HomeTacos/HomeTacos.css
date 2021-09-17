@@ -16,3 +16,13 @@
   max-width: 80%;
   margin: 0 auto;
 }
+
+@media screen and (max-width: 949px) {
+  .catInHat {
+    width: 85%;
+  }
+  .carousel-images {
+    width: 300px;
+    height: 450px;
+  }
+}
