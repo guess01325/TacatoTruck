@@ -1,11 +1,12 @@
+.formatContainer {
+  height: 100vh;
+}
 
-
-.catInHat{
+.catInHat {
   display: flex;
   justify-content: center;
   /* background: yellow */
 }
-
 
 .formSignInContainer {
   align-self: center;
@@ -16,15 +17,13 @@
   border: 2px solid #b0bec5;
   border-radius: 6px;
   box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.3);
-  background:#9DA27A;
+  background: #9da27a;
 }
-
-
 
 .formSignInContainer h1 {
   text-align: center;
   font-size: 40px;
-  font-family: 'Ranchers';
+  font-family: "Ranchers";
 }
 
 .formSignInContainer form {
@@ -52,12 +51,10 @@
   border: 2px solid #82ada9;
 }
 
-
 .formSignInContainer form button {
   width: 50%;
   margin: 1em auto;
   background: goldenrod;
- 
 }
 
 .formSignInContainer form button:hover {
@@ -72,11 +69,10 @@
   margin-top: 0.6em;
 }
 
-
-.outterContainer{
- display: flex;
+.outterContainer {
+  display: flex;
   flex-direction: row-reverse;
-  background: #9DA27A;
+  background: #9da27a;
   margin-top: 8%;
   margin-left: 10%;
   margin-right: 10%;
@@ -87,19 +83,13 @@
   box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.3);
   transition: all 2s ease;
 }
-  
-.formSignInContainer label{
-  font-size: 15px;;
+
+.formSignInContainer label {
+  font-size: 15px;
 }
 
-  
-
-@media all and (min-width:320px)
-and (max-width:900px){
-    .outterContainer{
+@media all and (min-width: 320px) and (max-width: 900px) {
+  .outterContainer {
     flex-direction: column-reverse;
-    
-    }
   }
-
- 
+}
