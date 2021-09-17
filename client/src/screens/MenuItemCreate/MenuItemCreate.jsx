@@ -58,11 +58,11 @@ function MenuItemCreate(props) {
   return (
     <>
       <Layout user={props.user}>
-        <div className="outter-conatainer">
-
-        <div className="form-container">
-
-        <h1>Create A Taco</h1>
+        <div className="outterCreateContainer">
+          
+          <div className="formCreateContainer">
+        
+          <h1>Create A Taco</h1>
         <form className="createItem-form" onSubmit={handleSubmit}>
           <input
             className="create-name"
@@ -99,10 +99,15 @@ function MenuItemCreate(props) {
           <button type="submit" className="create-submit-button">
             Submit
           </button>
-        </form>
-       
-            </div>
-              </div>
+            </form>
+          </div>
+          {/* <div className="createTacoImg"> */}
+            <img
+              src="https://slack-imgs.com/?c=1&o1=ro&url=https%3A%2F%2Fres.cloudinary.com%2Fotisg%2Fimage%2Fupload%2Fv1631708333%2FChickenTaco_gtgtln.jpg"
+              alt="Taco Image"
+            />
+          {/* </div> */}
+        </div>
       </Layout>
     </>
   );

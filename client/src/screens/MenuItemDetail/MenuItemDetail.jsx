@@ -8,6 +8,8 @@ import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Checkbox from "@material-ui/core/Checkbox";
 import allIngredients from "../../utils/ingredients";
 // import useMediaQuery from '@mui/material/useMediaQuery';
+import Button from "@material-ui/core/Button";
+import { addUserCartItem } from "../../services/users"
 
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Ranchers&display=swap');
@@ -34,15 +36,26 @@ function MenuItemDetail(props) {
     return <h1>Loading...</h1>;
   }
 
-  // item.ingredients.map((ingredient) => {
-  //   const index = allIngredients.indexOf(ingredient);
-  //   ingredientsState[index] = true;
-  // });
-  const handleChange = (index) => {
-    const currentArray = ingredientsState;
-    const newState = !ingredientsState[index];
-    currentArray.splice(index, 1, newState);
-    setIngredientsState([...currentArray]);
+  item.ingredients.map((ingredient) => {
+    const index = allIngredients.indexOf(ingredient);
+    ingredientsState[index] = true;
+  });
+  // const handleChange = (index) => {
+  //   const currentArray = ingredientsState;
+  //   const newState = !ingredientsState[index];
+  //   currentArray.splice(index, 1, newState);
+  //   setIngredientsState([...currentArray]);
+  // };
+
+  const addCartItem = async (id) => {
+    await addUserCartItem(props.user.id, id)
+  };
+
+  const handleOnChange = (position) => {
+    const updatedIngredientState = ingredientsState.map((item, index) =>
+      index === position ? !item : item
+    );
+    setIngredientsState(updatedIngredientState);
   };
   return (
     <Layout user={props.user}>
@@ -57,13 +70,12 @@ function MenuItemDetail(props) {
               <FormGroup className="check-box" row>
                 {allIngredients.map((ingredient, index) => (
                   <>
-                    {console.log(ingredient)}
                     <FormControlLabel
                       control={
                         <Checkbox
                           checked={ingredientsState[index]}
                           onChange={() => {
-                            handleChange(index);
+                            handleOnChange(index);
                           }}
                           name={ingredient}
                         />
@@ -72,6 +84,13 @@ function MenuItemDetail(props) {
                     />
                   </>
                 ))}
+                <Button
+            id="order-button"
+            onClick={() => addCartItem(props.id)}
+            size="medium"
+          >
+            Order Meow
+          </Button>
               </FormGroup>
             </div>
           </div>
@@ -80,6 +99,5 @@ function MenuItemDetail(props) {
     </Layout>
   );
 }
-  
 
 export default MenuItemDetail;

@@ -5,6 +5,11 @@ nav a {
   color: #e7af00;
 }
 
+.payLink {
+  color: inherit;
+  text-decoration: none;
+}
+
 .titleYellow {
   color: #e7af00;
 }
@@ -22,29 +27,35 @@ nav a {
 }
 
 .link {
-  font-size: 25px;
+  font-size: 20px;
   letter-spacing: 2px;
 }
-
 
 .userGreeting {
   color: inherit;
   text-decoration: none;
   font-family: "Ranchers", cursive;
   color: #e7af00;
+  text-align: center;
+  letter-spacing: 2px;
 }
 
-@media only screen and (min-device-width: 375px) and (max-device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
-  nav a {
+@media screen and (max-width: 650px) {
+  .link,
+  .userGreeting,
+  .title {
+    display: flex;
+    flex-direction: row;
     font-size: 10px;
-    color: blue;
+    text-align: left;
+    margin-top: 5px;
+  }
+
+  .title {
+    font-size: 15px;
+  }
+
+  .links {
+    align-items: flex-start;
   }
 }
-
-/* @media all and (min-width: 375px) and (max-width: 812px) {
-  .link {
-    font-size: 10px;
-    color: blue;
-  }
-} */
-
