@@ -25,3 +25,17 @@ nav a {
   font-size: 25px;
   letter-spacing: 2px;
 }
+
+@media only screen and (min-device-width: 375px) and (max-device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
+  nav a {
+    font-size: 10px;
+    color: blue;
+  }
+}
+
+/* @media all and (min-width: 375px) and (max-width: 812px) {
+  .link {
+    font-size: 10px;
+    color: blue;
+  }
+} */
