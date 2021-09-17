@@ -1,22 +1,27 @@
 nav a {
   color: inherit;
   text-decoration: none;
-  font-family: 'Ranchers', cursive;
-  color: #E7AF00
+  font-family: "Ranchers", cursive;
+  color: #e7af00;
 }
 
 .titleYellow {
-  color: #E7AF00
+  color: #e7af00;
 }
 
 .titleRed {
-  color: #C91919
+  color: #c91919;
 }
 
 .titleGreen {
-  color: #41A332
+  color: #41a332;
 }
 
 .titleTortilla {
-  color: #C39B77
+  color: #c39b77;
+}
+
+.link {
+  font-size: 25px;
+  letter-spacing: 2px;
 }
