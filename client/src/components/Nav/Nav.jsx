@@ -132,7 +132,7 @@ const Nav = ({ user }) => {
               <NavLink className="title" to="/">
                 <span className="titleYellow">T</span>
                 <span className="titleRed">a</span>
-                <span className="titleGreen">c</span>
+                <span className="titleGreen">C</span>
                 <span className="titleTortilla">a</span>
                 <span className="titleYellow">t</span>
                 <span className="titleRed">o</span>{" "}
