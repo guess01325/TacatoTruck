@@ -135,7 +135,7 @@ const Nav = (props) => {
           </ListItem>
         ))}
       </List>
-      <h2>Total: ${totalPriceCart.toFixed(2)}</h2>
+      <h2>Total: ${totalPriceCart.toFixed(2)}</h2> <Button>Pay Meow</Button>
     </div>
   );
 
@@ -166,8 +166,8 @@ const Nav = (props) => {
             </Typography>
             <div className="links">
               {props.user && (
-                <div className="link welcome">
-                  Welcome, {props.user.username}
+                <div className="userGreeting">
+                  You're Pawsome, {props.user.username}
                 </div>
               )}
               {alwaysOptions}
