@@ -28,6 +28,18 @@ const theme = createTheme({
 
 function App() {
   const [user, setUser] = useState(null);
+  const [cartItems, setCartItems] = useState([]);
+
+  useEffect(() => {
+    if (user) {
+      console.log(user.id);
+      const fetchCart = async () => {
+        const userCartItems = await getUserCart(user.id);
+        setCartItems(userCartItems);
+      };
+      fetchCart();
+    }
+  }, []);
 
   useEffect(() => {
     const getUser = async () => {
