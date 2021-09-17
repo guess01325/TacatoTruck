@@ -1,7 +1,7 @@
 .outterFormSignUpContainer{
   display: flex;
   flex-direction: row-reverse;
-  /* background: darkkhaki; */
+  background: #9DA27A;
   margin-top: 8%;
   margin-left: 10%;
   margin-right: 10%;
@@ -12,10 +12,14 @@
   box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.3);
   transition: all 2s ease;
 }
-.catInHat{
+/* .catInHat{
   display: flex;
   justify-content: center;
   
+} */
+
+.catSignUp{
+  align-self: flex-end;
 }
 
 
@@ -24,7 +28,7 @@
   padding: 1em;
   width: 50%;
   height: 80%;
-  margin: 4em auto;
+  margin: 1em auto;
   border: 2px solid #b0bec5;
   border-radius: 6px;
   box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.3);

@@ -2,18 +2,9 @@ import "./SignUp.css";
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { signUp } from "../../services/users";
+import {Link} from "react-router-dom"
 import Layout from "../../components/Layout/Layout";
-import Avatar from "@material-ui/core/Avatar";
 import Button from "@material-ui/core/Button";
-import CssBaseline from "@material-ui/core/CssBaseline";
-import TextField from "@material-ui/core/TextField";
-import FormControlLabel from "@material-ui/core/FormControlLabel";
-import Checkbox from "@material-ui/core/Checkbox";
-import Link from "@material-ui/core/Link";
-import Paper from "@material-ui/core/Paper";
-import Box from "@material-ui/core/Box";
-import Grid from "@material-ui/core/Grid";
-import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import Typography from "@material-ui/core/Typography";
 
 function SignUp(props) {
@@ -120,7 +111,7 @@ function SignUp(props) {
 
   return (
     <Layout user={props.user}>
-      {/* <div className="outterFormSignUpContainer"> */}
+      <div className="outterFormSignUpContainer">
         <div className='formSignUpContainer'>
 
           <h3>Sign Up</h3>
@@ -165,13 +156,13 @@ function SignUp(props) {
             />
             {renderError()}
           </form>
-        {/* </div>   */}
-        {/* <div classname="catSignUp">
+        </div>  
+         <div className="catSignUp">
           <img
             src="https://res.cloudinary.com/dy6xpqkkj/image/upload/v1631547003/Tactato%20Truck/istockphoto-833450608-612x612-removebg-preview_ms3oez.png"
             alt="cat"
-          />
-        </div> */}
+          /> 
+        </div> 
       </div>
     </Layout>
   );

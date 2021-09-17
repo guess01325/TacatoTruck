@@ -3,25 +3,26 @@ import Layout from "../../components/Layout/Layout";
 import HomeTacos from "../../components/HomeTacos/HomeTacos";
 import Grid from "@material-ui/core/Grid";
 import { makeStyles } from "@material-ui/core/styles";
-import Paper from "@material-ui/core/Paper";
 
 const useStylesGrid = makeStyles((theme) => ({
   gridRoot: {
     flexGrow: 1,
     margin: 32,
-
   },
   gridOurMission: {
     width: "50%",
-    textAlign: "center",
+    textAlign: "justify",
+    alignContent: "center",
     minWidth: "300px",
+  },
+  gridMissionTitle: {
+    textAlign: "center",
   },
   carousel: {
     width: "50%",
     textAlign: "center",
     minWidth: "300px",
   },
-
 }));
 
 function Home(props) {
@@ -37,14 +38,16 @@ function Home(props) {
         <div className={classesGrid.gridRoot}>
           <Grid container spacing={3}>
             <Grid item m className={classesGrid.gridOurMission}>
-              <Paper elevation={3}>
+              <div className="cat-mission">
                 <img
                   className="catInHat"
                   src="https://res.cloudinary.com/dy6xpqkkj/image/upload/v1631547003/Tactato%20Truck/istockphoto-833450608-612x612-removebg-preview_ms3oez.png"
                   alt="cat"
                 ></img>
-                <h1>Our Mission</h1>
-                <article>
+                <h1 className="mewow">Our Mission</h1>
+              </div>
+              <Grid item m className={classesGrid.gridMissionTitle}>
+                <article className="mission">
                   TaCato Truck was founded by four amazing full stack software
                   engineers. Driving their success is their love for tacos, and
                   their passion for partnering with the{" "}
@@ -55,13 +58,11 @@ function Home(props) {
                     ASPCA for cat adoption.
                   </a>
                 </article>
-              </Paper>
+              </Grid>
             </Grid>
             <Grid item m className={classesGrid.carousel}>
-              <Paper elevation={3}>
-                <h1>The Cat's Mewow</h1>
-                <HomeTacos />
-              </Paper>
+              <h1 className="mewow">The Cat's Mewow</h1>
+              <HomeTacos />
             </Grid>
           </Grid>
         </div>

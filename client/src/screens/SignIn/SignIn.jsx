@@ -97,7 +97,7 @@ function SignIn(props) {
   return (
     <Layout user={props.user}>
       <div className="outterContainer">
-      <div className="formContainer">
+      <div className="formSignInContainer">
   
         <h1 className="signInLabel">Sign In</h1>
         <form onSubmit={onSignIn}>
