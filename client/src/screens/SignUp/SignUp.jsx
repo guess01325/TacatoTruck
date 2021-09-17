@@ -157,12 +157,10 @@ function SignUp(props) {
               {renderError()}
             </form>
           </div>
-          <div className="catSignUp">
-            <img
-              src="https://res.cloudinary.com/dy6xpqkkj/image/upload/v1631547003/Tactato%20Truck/istockphoto-833450608-612x612-removebg-preview_ms3oez.png"
-              alt="cat"
-            />
-          </div>
+          <img
+            src="https://res.cloudinary.com/dy6xpqkkj/image/upload/v1631547003/Tactato%20Truck/istockphoto-833450608-612x612-removebg-preview_ms3oez.png"
+            alt="cat"
+          />
         </div>
       </div>
     </Layout>
