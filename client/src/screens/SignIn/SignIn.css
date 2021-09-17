@@ -5,7 +5,8 @@
 .catInHat {
   display: flex;
   justify-content: center;
-  /* background: yellow */
+  /* background: yellow; */
+  flex-direction: column;
 }
 
 .formSignInContainer {
@@ -88,7 +89,7 @@
   font-size: 15px;
 }
 
-@media all and (min-width: 320px) and (max-width: 900px) {
+@media all and (min-width: 350px) and (max-width: 900px) {
   .outterContainer {
     flex-direction: column-reverse;
   }
