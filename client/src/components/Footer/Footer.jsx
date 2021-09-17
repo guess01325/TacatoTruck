@@ -9,11 +9,12 @@ import Container from "@material-ui/core/Container";
 import Link from "@material-ui/core/Link";
 
 const useStyles = makeStyles((theme) => ({
-  appBar: {
+  boxFooter: {
     top: "auto",
     bottom: 0,
     fontFamily: "Ranchers, cursive",
     color: "#E7AF00",
+    backgroundColor: "#8E443D",
   },
   octoCat: {
     width: 60,
@@ -72,10 +73,12 @@ function Footer() {
     //   </AppBar>
     // </footer>
     <Box
+      className={classes.boxFooter}
       sx={{
         display: "flex",
         flexDirection: "column",
-        minHeight: "100vh",
+        // minHeight: "100vh",
+        bottom: "0",
       }}
     >
       <Box
