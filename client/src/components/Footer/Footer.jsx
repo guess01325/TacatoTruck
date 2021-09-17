@@ -7,6 +7,7 @@ import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
 import Container from "@material-ui/core/Container";
 import Link from "@material-ui/core/Link";
+import "../../components/Footer/Footer.css";
 
 const useStyles = makeStyles((theme) => ({
   boxFooter: {
@@ -25,10 +26,10 @@ const useStyles = makeStyles((theme) => ({
 
 function Copyright() {
   return (
-    <Typography variant="body2" color="text.secondary">
+    <Typography variant="body2" color="text.secondary" align="center">
       {"Copyright © "}
       <Link color="inherit" href="https://material-ui.com/">
-        Your Website
+        TaCato Truck
       </Link>{" "}
       {new Date().getFullYear()}
       {"."}
@@ -92,9 +93,51 @@ function Footer() {
         }}
       >
         <Container maxWidth="sm">
-          <Typography variant="body1">
-            My sticky footer can be found here.
-          </Typography>
+          <div className="octocats-div">
+            {/* <Typography variant="body1"> */}
+            <div>
+              <a href="https://github.com/Nafff" target="_blank">
+                <img
+                  className={classes.octoCat}
+                  src="https://res.cloudinary.com/dy6xpqkkj/image/upload/v1631547003/Tactato%20Truck/download-1-removebg-preview_1_avlm57.png"
+                  alt="github octocat"
+                />
+              </a>
+              <h6>Jake Adick</h6>
+            </div>
+            <div>
+              <a href="https://github.com/CourtneyAJackson" target="_blank">
+                <img
+                  className={classes.octoCat}
+                  src="https://res.cloudinary.com/dy6xpqkkj/image/upload/v1631547003/Tactato%20Truck/download-1-removebg-preview_1_avlm57.png"
+                  alt="github octocat"
+                />
+              </a>
+              <h6>Courtney Jackson</h6>
+            </div>
+            <p className="check-meowt">Check Meowt</p>
+            <div>
+              <a href="https://github.com/eileen813" target="_blank">
+                <img
+                  className={classes.octoCat}
+                  src="https://res.cloudinary.com/dy6xpqkkj/image/upload/v1631547003/Tactato%20Truck/download-1-removebg-preview_1_avlm57.png"
+                  alt="github octocat"
+                />
+              </a>
+              <h6>Eileen Olivera</h6>
+            </div>
+            <div>
+              <a href="https://github.com/guess01325" target="_blank">
+                <img
+                  className={classes.octoCat}
+                  src="https://res.cloudinary.com/dy6xpqkkj/image/upload/v1631547003/Tactato%20Truck/download-1-removebg-preview_1_avlm57.png"
+                  alt="github octocat"
+                />
+              </a>
+              <h6>Otis Guess</h6>
+            </div>
+            {/* </Typography> */}
+          </div>
           <Copyright />
         </Container>
       </Box>
