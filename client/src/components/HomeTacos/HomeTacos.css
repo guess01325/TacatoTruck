@@ -1,0 +1,16 @@
+@import url("https://fonts.googleapis.com/css2?family=Short+Stack&display=swap");
+
+.carousel-images {
+  width: 600px;
+  height: 600px;
+}
+
+.carousel-text {
+  background-color: #edb345;
+  opacity: 0.8;
+  border-radius: 15px 50px;
+  border-width: 25px;
+  font-weight: bolder;
+  color: #ba0014;
+  font-family: "Short Stack", cursive;
+}
