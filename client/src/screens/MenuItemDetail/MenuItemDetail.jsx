@@ -10,8 +10,8 @@ import allIngredients from "../../utils/ingredients";
 // import useMediaQuery from '@mui/material/useMediaQuery';
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Ranchers&display=swap');
-</style>
+  @import url('https://fonts.googleapis.com/css2?family=Ranchers&display=swap');
+</style>;
 
 function MenuItemDetail(props) {
   const [item, setItem] = useState(null);
@@ -20,7 +20,7 @@ function MenuItemDetail(props) {
   const [ingredientsState, setIngredientsState] = useState(
     new Array(allIngredients.length).fill(false)
   );
- 
+
   console.log(ingredientsState);
   useEffect(() => {
     const fetchItem = async () => {
@@ -41,38 +41,40 @@ function MenuItemDetail(props) {
   // });
   const handleChange = (index) => {
     const currentArray = ingredientsState;
-    const newState = !ingredientsState[index]
+    const newState = !ingredientsState[index];
     currentArray.splice(index, 1, newState);
     setIngredientsState([...currentArray]);
   };
   return (
     <Layout user={props.user}>
-      <div className="detail-container">
-        <div className="taco-detail-container">
-          <img className="item-1" src={item.imgURL} alt={item.name} />
-          <div className="info-container">
-            <div className="name">{item.name}</div>
-            <div className="price">{`${item.price}`}</div>
-            
-            <FormGroup className="check-box" row>
-              {allIngredients.map((ingredient, index) => (
-                <>
-                  {console.log(ingredient)}
-                  <FormControlLabel 
-                    control={
-                      <Checkbox 
-                        checked={ingredientsState[index]}
-                        onChange={() => {
-                          handleChange(index);
-                        }}
-                        name={ingredient}
-                      />
-                    }
-                    label={ingredient}
-                  />
-                </>
-              ))}
-            </FormGroup>
+      <div className="formatContainer">
+        <div className="detail-container">
+          <div className="taco-detail-container">
+            <img className="item-1" src={item.imgURL} alt={item.name} />
+            <div className="info-container">
+              <div className="name">{item.name}</div>
+              <div className="price">{`${item.price}`}</div>
+
+              <FormGroup className="check-box" row>
+                {allIngredients.map((ingredient, index) => (
+                  <>
+                    {console.log(ingredient)}
+                    <FormControlLabel
+                      control={
+                        <Checkbox
+                          checked={ingredientsState[index]}
+                          onChange={() => {
+                            handleChange(index);
+                          }}
+                          name={ingredient}
+                        />
+                      }
+                      label={ingredient}
+                    />
+                  </>
+                ))}
+              </FormGroup>
+            </div>
           </div>
         </div>
       </div>

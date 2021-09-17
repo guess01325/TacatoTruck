@@ -10,7 +10,9 @@ import Link from "@material-ui/core/Link";
 
 const useStyles = makeStyles((theme) => ({
   boxFooter: {
-    top: "auto",
+    // top: "auto",
+    // bottom: 0,
+    marginTop: "calc(5% + 60px)",
     bottom: 0,
     fontFamily: "Ranchers, cursive",
     color: "#E7AF00",

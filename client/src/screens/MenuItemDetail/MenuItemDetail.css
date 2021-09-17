@@ -1,89 +1,75 @@
-
-
-
-
-
-.detail-container {
-    border-radius: 25px;
-    top: 65px;
-    display: flex;
-    width: 80%;
-    height: 450px;
-   align-items: center;
-   /* position: relative; */
-  /* margin-left: 150px;
-  margin-right: 150px; */
-   text-align: center;
-   background-color: #9DA27A;
-   margin: 50px auto;
-  
-  
+.formatContainer {
+  height: 100vh;
 }
 
-.taco-detail-container{
-/* position: relative; */
+.detail-container {
+  border-radius: 25px;
+  top: 65px;
+  display: flex;
+  width: 80%;
+  height: 450px;
+  align-items: center;
+  /* position: relative; */
+  /* margin-left: 150px;
+  margin-right: 150px; */
+  text-align: center;
+  background-color: #9da27a;
+  margin: 50px auto;
+}
 
-display: flex;
-flex-direction: row;
-justify-content: space-evenly;
+.taco-detail-container {
+  /* position: relative; */
 
-align-items: center;
-width: auto;
-height: 350px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
 
-
+  align-items: center;
+  width: auto;
+  height: 350px;
 }
 
 .info-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 0px 20px;
-    position: relative;
-    height: 350px;
-    top: 45px;
-    width: auto;
-    
-
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 20px;
+  position: relative;
+  height: 350px;
+  top: 45px;
+  width: auto;
 }
 
-.taco-detail-container img{
-width: 350px;
-height: 375px;
-padding: 0px 20px;
-margin-top: 130px;
+.taco-detail-container img {
+  width: 350px;
+  height: 375px;
+  padding: 0px 20px;
+  margin-top: 130px;
 }
-
-
-
-
-
 
 .name {
-position: relative;
-right: 50px;
-bottom: 25px;
-font-size: 40px;
-color: aliceblue;
-font-family: 'Ranchers', cursive;
+  position: relative;
+  right: 50px;
+  bottom: 25px;
+  font-size: 40px;
+  color: aliceblue;
+  font-family: "Ranchers", cursive;
 }
 
-.price{
-    position: relative;
-right:50px;
-bottom: 25px;
-font-size: 20px;
-color: aliceblue;
-font-family: 'Ranchers', cursive;
+.price {
+  position: relative;
+  right: 50px;
+  bottom: 25px;
+  font-size: 20px;
+  color: aliceblue;
+  font-family: "Ranchers", cursive;
 }
 
-.check-box{
-    font-family: 'Ranchers', cursive;
-    color: aliceblue;
+.check-box {
+  font-family: "Ranchers", cursive;
+  color: aliceblue;
 }
-
-
 
 /* 
 
@@ -95,7 +81,7 @@ font-family: 'Ranchers', cursive;
         position: relative;
         left: 200px;
     } */
-    /* .price{
+/* .price{
         display: flex;
         flex-direction: column;
 
@@ -113,7 +99,7 @@ font-family: 'Ranchers', cursive;
         position: relative;
 
     } */
-     
+
 /* 
     @media only screen and (max-width: 1420px){
         .taco-detail-container{
@@ -130,30 +116,25 @@ font-family: 'Ranchers', cursive;
 
         } */
 
-        @media only screen and (max-width: 715px) {
-            .taco-detail-container{
-                flex-direction: column-reverse;
-                justify-content: space-between;
-                align-content: center;
-                height: 50%;
-
-
-            }
-            .detail-container{
-                height: fit-content;
-
-            }
-            .taco-detail-container img{
-                margin-top: 20px;
-                height: 300px;
-                width: auto;
-            }
-            .info-container{
-                height: 30%;
-                justify-content: center;
-                align-items: center;
-                margin-bottom: 20px;
-            }
-            
-        }
-
+@media only screen and (max-width: 715px) {
+  .taco-detail-container {
+    flex-direction: column-reverse;
+    justify-content: space-between;
+    align-content: center;
+    height: 50%;
+  }
+  .detail-container {
+    height: fit-content;
+  }
+  .taco-detail-container img {
+    margin-top: 20px;
+    height: 300px;
+    width: auto;
+  }
+  .info-container {
+    height: 30%;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+}
