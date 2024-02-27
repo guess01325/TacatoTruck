@@ -107,7 +107,9 @@
     align-items: center;
     width: 100%;
     height: 275px;
+
     
+  }
 
   .taco-detail-container img {
     height: 300px;
@@ -146,8 +148,8 @@
     font-size: 20px;
   }
 
-  
-  
+}
+
   @media only screen and (max-width: 1355px) {
     .detail-container{
       height: 1100px;
