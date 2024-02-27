@@ -1,8 +1,10 @@
 import mongoose from 'mongoose'
 
 let MONGODB_URI =
-  process.env.PROD_MONGODB
-  //  || 'mongodb://127.0.0.1:27017/tacatoAuthenticationDatabase'
+"mongodb+srv://guess01325:145012@tacato-truck.p1mcedu.mongodb.net/?retryWrites=true&w=majority&appName=tacato-truck" 
+
+
+//  || 'mongodb://127.0.0.1:27017/tacatoAuthenticationDatabase'
 
   
 
