@@ -4,11 +4,15 @@ let MONGODB_URI =
   process.env.PROD_MONGODB
   //  || 'mongodb://127.0.0.1:27017/tacatoAuthenticationDatabase'
 
-// mongoose.set('debug', true)
+  
 
-// mongoose.set('useCreateIndex', true)
+mongoose.set('strictQuery', false);
 
-mongoose.set('returnOriginal', false)
+// mongoose.set('debug', true);
+
+// mongoose.set('useCreateIndex', true);
+
+mongoose.set('returnOriginal', false);
 
 mongoose
   .connect(MONGODB_URI, { useUnifiedTopology: true, useNewUrlParser: true })
