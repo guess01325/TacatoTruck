@@ -1,6 +1,6 @@
 import "./App.css";
 import { useState, useEffect } from "react";
-import { Route, Switch, Redirect } from "react-router-dom";
+import { Route, Routes, Redirect } from "react-router-dom";
 import { verifyUser } from "./services/users";
 import SignUp from "./screens/SignUp/SignUp";
 import SignIn from "./screens/SignIn/SignIn";
@@ -53,7 +53,7 @@ function App() {
   return (
     <div className="App">
       <ThemeProvider theme={theme}>
-        <Switch>
+        <Routes>
           <Route exact path="/">
             <Home user={user} />
           </Route>
@@ -79,7 +79,7 @@ function App() {
           <Route path="/sign-in">
             <SignIn setUser={setUser} />
           </Route>
-        </Switch>
+        </Routes>
       </ThemeProvider>
     </div>
   );
