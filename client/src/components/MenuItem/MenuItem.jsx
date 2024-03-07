@@ -64,7 +64,7 @@ function MenuItem(props) {
               height="140"
               maxwidth="50"
               image={props.imgURL}
-              alt={props.name}
+              // alt={props.name}
               title={props.name}
             />
             <CardContent className={classes.cardContent}>
