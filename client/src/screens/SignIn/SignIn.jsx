@@ -4,6 +4,8 @@ import { signIn } from "../../services/users";
 import { useHistory } from "react-router-dom";
 import Layout from "../../components/Layout/Layout";
 import Button from "@material-ui/core/Button";
+import Box from "@material-ui/core/Box";
+import Container from "@material-ui/core/Box";
 
 
 function SignIn(props) {
@@ -75,7 +77,7 @@ function SignIn(props) {
 
   return (
     <Layout user={props.user}>
-      <div className="formatContainer">
+      <Container>
         <div className="outterContainer">
           <div className="formSignInContainer">
             <h1 className="signInLabel">Sign In</h1>
@@ -106,14 +108,12 @@ function SignIn(props) {
               {renderError()}
             </form>
           </div>
-          <div className="catInHat">
             <img
               src="https://res.cloudinary.com/dy6xpqkkj/image/upload/v1631547003/Tactato%20Truck/istockphoto-833450608-612x612-removebg-preview_ms3oez.png"
               alt="cat"
             />
-          </div>
         </div>
-      </div>
+      </Container>
     </Layout>
   );
 }

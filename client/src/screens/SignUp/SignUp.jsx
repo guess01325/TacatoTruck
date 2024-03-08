@@ -6,6 +6,8 @@ import { Link } from "react-router-dom";
 import Layout from "../../components/Layout/Layout";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
+import Box from "@material-ui/core/Box";
+import Container from "@material-ui/core/Box";
 
 function SignUp(props) {
   const history = useHistory();
@@ -111,7 +113,7 @@ function SignUp(props) {
 
   return (
     <Layout user={props.user}>
-      <div className="formatContainer">
+      <Container >
         <div className="outterFormSignUpContainer">
           <div className="formSignUpContainer">
             <h3>Sign Up</h3>
@@ -162,7 +164,7 @@ function SignUp(props) {
             alt="cat"
           />
         </div>
-      </div>
+      </Container>
     </Layout>
   );
 }

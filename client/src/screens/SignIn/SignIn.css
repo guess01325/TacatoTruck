@@ -1,12 +1,17 @@
-.formatContainer {
-  height: 100vh;
-}
 
-.catInHat {
+.outterContainer {
   display: flex;
-  justify-content: center;
-  /* background: yellow; */
-  flex-direction: column;
+  flex-direction: row-reverse;
+  background: #9da27a;
+  margin-top: 8%;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-bottom: 5%;
+  position: inherit;
+  padding-right: 80px;
+  border-radius: 10px;
+  box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.3);
+  transition: all 2s ease;
 }
 
 .formSignInContainer {
@@ -70,27 +75,29 @@
   margin-top: 0.6em;
 }
 
-.outterContainer {
-  display: flex;
-  flex-direction: row-reverse;
-  background: #9da27a;
-  margin-top: 8%;
-  margin-left: 10%;
-  margin-right: 10%;
-  margin-bottom: 5%;
-  position: inherit;
-  padding-right: 80px;
-  border-radius: 10px;
-  box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.3);
-  transition: all 2s ease;
-}
 
 .formSignInContainer label {
   font-size: 15px;
 }
 
+
 @media all and (min-width: 350px) and (max-width: 900px) {
   .outterContainer {
     flex-direction: column-reverse;
+    width: 300px;
+    
+  }
+  .formSignInContainer {
+    /* align-self: center; */
+    padding: 1em;
+    width: 300px;
+    margin: 4em auto;
+    border: 2px solid #b0bec5;
+    border-radius: 6px;
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.3);
+    background: #9da27a;
+  }
+  .outterContainer img{
+   width: 300px;
   }
 }

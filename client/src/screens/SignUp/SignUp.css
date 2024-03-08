@@ -1,11 +1,7 @@
-.formatContainer{
-  height: 100vh;
-}
-
-.outterFormSignUpContainer{
+.outterFormSignUpContainer {
   display: flex;
   flex-direction: row-reverse;
-  background: #9DA27A;
+  background: #9da27a;
   margin-top: 8%;
   margin-left: 10%;
   margin-right: 10%;
@@ -27,17 +23,17 @@
   border-radius: 6px;
   box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.3);
   transition: all 2s ease;
-  background: #9DA27A;
+  background: #9da27a;
 }
 
-.formSignUpContainer label{
+.formSignUpContainer label {
   font-size: 15px;
 }
 
 .formSignUpContainer h3 {
   text-align: center;
   font-size: 40px;
-  font-family: 'Ranchers';
+  font-family: "Ranchers";
 }
 
 .formSignUpContainer form {
@@ -57,7 +53,7 @@
   border: 2px solid #e0e0e0;
   outline: none;
   transition: all 0.4s ease;
-  background:lightgray;
+  background: lightgray;
 }
 
 .formSignUpContainer form button:hover {
@@ -72,14 +68,34 @@
   color: white;
 }
 
-@media all and (min-width:350px) and (max-width:900px){
-    .outterFormSignUpContainer{
+@media all and (min-width: 350px) and (max-width: 900px) {
+  .outterFormSignUpContainer {
+    width: 300px;
     flex-direction: column-reverse;
-  
-    }
-    .catSignUp{
-      display: flex;
-      justify-content: center;
-      flex-direction: column;
-    }
   }
+  .formSignUpContainer {
+    padding: 1em;
+    width: 300px;
+    height: auto;
+    margin: 1em auto;
+    border: 2px solid #b0bec5;
+    border-radius: 6px;
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.3);
+    transition: all 2s ease;
+    background: #9da27a;
+  }
+  .formSignUpContainer form input {
+    width: 100%;
+    padding: 0.6em 1em;
+    margin: 0.5em auto;
+    font-size: 1rem;
+    border-radius: 3px;
+    border: 2px solid #e0e0e0;
+    outline: none;
+    transition: all 0.4s ease;
+    background: lightgray;
+  }
+  .outterFormSignUpContainer img {
+    width: 300px;
+  }
+}
