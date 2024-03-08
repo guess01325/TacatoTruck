@@ -10,3 +10,4 @@ router.use('/', usersRoutes)
 router.use('/', menuItemRoutes)
 
 export default router
+ 

@@ -68,7 +68,10 @@ function App() {
             )}
           </Route>
           <Route path="/create-taco">
-            {user ? <MenuItemCreate user={user} /> : <Redirect to="/sign-up" />}
+              {user ? <MenuItemCreate user={user} /> 
+            : 
+            <Redirect to="/sign-up" />
+            }
           </Route>
           <Route path="/sign-up">
             <SignUp setUser={setUser} />

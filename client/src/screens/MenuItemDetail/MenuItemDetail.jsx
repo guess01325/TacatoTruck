@@ -8,7 +8,10 @@ import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Checkbox from "@material-ui/core/Checkbox";
 import allIngredients from "../../utils/ingredients";
 import Button from "@material-ui/core/Button";
-import { addUserCartItem } from "../../services/users"
+import Box from "@material-ui/core/Box";
+import Container from "@material-ui/core/Box";
+
+import { addUserCartItem } from "../../services/users";
 
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Ranchers&display=swap');
@@ -41,7 +44,7 @@ function MenuItemDetail(props) {
   });
 
   const addCartItem = async (id) => {
-    await addUserCartItem(props.user.id, id)
+    await addUserCartItem(props.user.id, id);
   };
 
   const handleOnChange = (position) => {
@@ -52,40 +55,42 @@ function MenuItemDetail(props) {
   };
   return (
     <Layout user={props.user}>
-      <div className="formatContainer">
-        <div className="detail-container">
-          <div className="taco-detail-container">
-            <img className="item-1" src={item.imgURL} alt={item.name} />
-            <div className="info-container">
-              <div className="name">{item.name}</div>
-              <div className="price">{`${item.price}`}</div>
-
-              <FormGroup className="check-box" row>
-                {allIngredients.map((ingredient, index) => (
-                  <>
-                    <FormControlLabel
-                      control={
-                        <Checkbox
-                          checked={ingredientsState[index]}
-                          name={ingredient}
-                        />
-                      }
-                      label={ingredient}
+      <Container component="main" maxWidth="md">
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+          }}
+        >
+          <img className="item-1" src={item.imgURL} alt={item.name} />
+          <div className="name">{item.name}</div>
+          <div className="price">{`${item.price}`}</div>
+        </Box>
+        <div className="info-container">
+          <FormGroup className="check-box" row>
+            {allIngredients.map((ingredient, index) => (
+              <>
+                <FormControlLabel
+                  control={
+                    <Checkbox
+                      checked={ingredientsState[index]}
+                      name={ingredient}
                     />
-                  </>
-                ))}
-                <Button
-            id="order-button"
-            onClick={() => addCartItem(props.id)}
-            size="medium"
-          >
-            Order Meow
-          </Button>
-              </FormGroup>
-            </div>
-          </div>
+                  }
+                  label={ingredient}
+                />
+              </>
+            ))}
+            <Button
+              id="order-button"
+              onClick={() => addCartItem(props.id)}
+              size="medium"
+            >
+              Order Meow
+            </Button>
+          </FormGroup>
         </div>
-      </div>
+      </Container>
     </Layout>
   );
 }

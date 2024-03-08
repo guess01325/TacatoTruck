@@ -6,6 +6,9 @@ import { createMenuItem } from "../../services/menuItems";
 import TextField from "@material-ui/core/TextField";
 import allIngredients from "../../utils/ingredients";
 import MenuItem from "@material-ui/core/MenuItem";
+import Box from '@material-ui/core/Box';
+import Container from '@material-ui/core/Box';
+
 
 function MenuItemCreate(props) {
   const [ingredientsState, setIngredientsState] = useState([]);
@@ -56,7 +59,8 @@ function MenuItemCreate(props) {
   return (
     <>
       <Layout user={props.user}>
-        <div className="formatContainer">
+          
+        <Container>
           <div className="outterCreateContainer">
             <div className="formCreateContainer">
               <h1>Create A Taco</h1>
@@ -68,7 +72,7 @@ function MenuItemCreate(props) {
                   name="name"
                   value={menuItem.name}
                   onChange={handleChange}
-                />
+                  />
                 <input
                   className="create-price"
                   placeholder="Price"
@@ -76,7 +80,7 @@ function MenuItemCreate(props) {
                   value={menuItem.price}
                   name="price"
                   onChange={handleChange}
-                />
+                  />
                 <TextField
                   select
                   className="create-ingredients"
@@ -89,7 +93,7 @@ function MenuItemCreate(props) {
                     multiple: true,
                     value: ingredientsState,
                   }}
-                >
+                  >
                   {allIngredients.map((ingredient) => (
                     <MenuItem value={ingredient}>{ingredient}</MenuItem>
                   ))}
@@ -101,20 +105,21 @@ function MenuItemCreate(props) {
                   name="imgURL"
                   required
                   onChange={handleChange}
-                />
+                  />
                 <button type="submit" className="create-submit-button">
                   Submit
                 </button>
               </form>
-            </div>
-            {/* <div className="createTacoImg"> */}
-            <img
+            </div>  
+            <Box>
+
+            <img 
               src="https://slack-imgs.com/?c=1&o1=ro&url=https%3A%2F%2Fres.cloudinary.com%2Fotisg%2Fimage%2Fupload%2Fv1631708333%2FChickenTaco_gtgtln.jpg"
               alt="Taco Image"
-            />
-            {/* </div> */}
+              />
+              </Box>
           </div>
-        </div>
+</Container>
       </Layout>
     </>
   );

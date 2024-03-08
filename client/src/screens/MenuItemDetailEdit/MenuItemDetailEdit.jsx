@@ -9,6 +9,8 @@ import Button from "@material-ui/core/Button";
 import { addUserCartItem } from "../../services/users";
 import TextField from "@material-ui/core/TextField";
 import MenuItem from "@material-ui/core/MenuItem";
+import Box from '@material-ui/core/Box';
+import Container from '@material-ui/core/Box';
 
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Ranchers&display=swap');
@@ -69,14 +71,17 @@ function MenuItemDetail(props) {
 
   return (
     <Layout user={props.user}>
-      <div className="formatContainer">
-        <div className="detail-container">
-          <div className="taco-detail-container">
+      <Container>
+
+  <Box>
+
+  
             <img className="item-1" src={item.imgURL} alt={item.name} />
-            <div className="info-container">
               <div className="name">{item.name}</div>
               <div className="price">{`${item.price}`}</div>
+  </Box>
 
+            <div className="info-container">
               <FormGroup className="check-box" row>
                 <TextField
                   select
@@ -90,10 +95,10 @@ function MenuItemDetail(props) {
                     multiple: true,
                     value: ingredientsState,
                   }}
-                >
+                  >
                   {allIngredients.map((ingredient) => (
                     <MenuItem value={ingredient}>{ingredient}</MenuItem>
-                  ))}
+                    ))}
                 </TextField>
                 <Button id="order-button" onClick={handleSubmit} size="medium">
                   Update Taco
@@ -102,14 +107,14 @@ function MenuItemDetail(props) {
                   id="order-button"
                   onClick={() => addCartItem(item._id)}
                   size="medium"
-                >
+                  >
                   Order Meow
                 </Button>
               </FormGroup>
             </div>
-          </div>
-        </div>
-      </div>
+          
+
+                  </Container>
     </Layout>
   );
 }
