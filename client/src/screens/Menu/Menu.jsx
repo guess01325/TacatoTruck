@@ -24,7 +24,7 @@ function Menu(props) {
     };
     fetchMenuItems();
   }, []);
-
+console.log(menu)
   return (
     <Layout user={props.user}>
       <div className="items">
