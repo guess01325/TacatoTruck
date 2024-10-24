@@ -37,7 +37,7 @@ function Home(props) {
         ></img>
         <div className={classesGrid.gridRoot}>
           <Grid container spacing={3}>
-            <Grid item m className={classesGrid.gridOurMission}>
+            <Grid item className={classesGrid.gridOurMission}>
               <div className="cat-mission">
                 <img
                   className="catInHat"

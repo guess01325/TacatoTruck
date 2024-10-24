@@ -19,20 +19,21 @@ function HomeTacos() {
           i++;
         }
       }
+      console.log(menu)
       setMenu(randomMenuitems);
     };
     fetchMenuItems();
   }, []);
-
+  
   return (
     <Carousel>
       {menu.map((menuItem) => (
-        <Carousel.Item>
+        <Carousel.Item key={menuItem.name}>
           <img
             className="carousel-images"
             src={menuItem.imgURL}
             alt={`${menuItem.name} slide`}
-          />
+            />
           <Carousel.Caption>
             <div className="carousel-text">
               <h3> {menuItem.name}</h3>
@@ -43,6 +44,7 @@ function HomeTacos() {
       ))}
     </Carousel>
   );
+
 }
 
 export default HomeTacos;
