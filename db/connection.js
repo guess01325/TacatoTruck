@@ -1,7 +1,13 @@
 import mongoose from 'mongoose'
 
+<<<<<<< HEAD
 let MONGODB_URI = 
 "mongodb+srv://guess01325:145012@tacato-truck.p1mcedu.mongodb.net/?retryWrites=true&w=majority&appName=tacato-truck" 
+=======
+let MONGODB_URI =
+  process.env.PROD_MONGODB
+   ||'mongodb://127.0.0.1:27017/tacatoAuthenticationDatabase'
+>>>>>>> development
 
 
   

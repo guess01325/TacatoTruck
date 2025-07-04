@@ -8,7 +8,11 @@ const getToken = () => {
 
 const api = axios.create({
     baseURL: process.env.NODE_ENV === 'production'
+<<<<<<< HEAD
         ? ' https://tacatotruck.onrender.com/api'
+=======
+        ? 'https://tacato-truck-7ba56881623c.herokuapp.com/'
+>>>>>>> development
         : 'http://localhost:3000/api'
 })
 

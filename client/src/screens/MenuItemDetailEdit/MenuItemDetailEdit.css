@@ -33,7 +33,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 0px 20px;
+  /* padding: 0px 20px; */
   position: relative;
   height: 350px;
   top: 45px;
@@ -45,7 +45,7 @@
   align-items: center;
   justify-content: center;
   height: 300px;
-  padding: 0px 20px;
+  /* padding: 0px 20px; */
   margin-top: 90px;
   border-radius: 15%;
 }
@@ -60,7 +60,7 @@
 .taco-detail-container img {
   width: 350px;
   height: 375px;
-  padding: 0px 20px;
+  /* padding: 0px 20px; */
   margin-top: 130px;
 }
 
@@ -98,10 +98,9 @@
   }
 
   .taco-detail-container {
-   
-  
     display: flex;
     flex-direction: row;
+<<<<<<< HEAD
     justify-content: space-evenly;
   
     align-items: center;
@@ -109,37 +108,39 @@
     height: 275px;
 
     
+=======
+    /* justify-content: space-evenly; */
+
+    align-items: center;
+    width: 100%;
+    height: 275px;
+>>>>>>> development
   }
 
   .taco-detail-container img {
     height: 300px;
     width: auto;
   }
+
   .info-container {
     height: 30%;
     justify-content: center;
     align-items: center;
 
-    
-    
     height: 350px;
     top: 45px;
     width: 50%;
     text-align: center;
     margin: 20px;
   }
-  
+
   .taco-detail-container img {
-    display:flex;
+    display: flex;
     align-items: center;
     justify-content: center;
     height: 300px;
-    
-    margin-top: 90px;
-    
-  
-  
 
+    margin-top: 90px;
   }
   .name {
     font-size: 20px;
@@ -147,7 +148,9 @@
   .price {
     font-size: 20px;
   }
+}
 
+<<<<<<< HEAD
 } */
 /* 
   @media only screen and (max-width: 1355px) {
@@ -159,6 +162,17 @@
       height: auto;
     }
    
+=======
+@media only screen and (max-width: 1355px) {
+  .detail-container {
+    height: 1100px;
+  }
+  .taco-detail-container img {
+    width: 300px;
+    height: auto;
+  }
+  /*    
+>>>>>>> development
     .info-container {
      height: 400px;
      
@@ -172,6 +186,7 @@
     }
     .price{
       font-size: 20px;
+<<<<<<< HEAD
     }
   
   }
@@ -182,12 +197,26 @@
   flex-direction: row;
     }
     .taco-detail-container .img{
+=======
+    } */
+}
+
+@media only screen and (max-width: 380px) {
+  /* .detail-container{
+  display: flex;
+  flex-direction: row;
+    } */
+  .taco-detail-container .img {
+>>>>>>> development
     width: 25px;
     height: auto;
-    }
-
   }
+<<<<<<< HEAD
    
+=======
+}
+/*   
+>>>>>>> development
   @media only screen and (max-width: 650px) {
     .name{
       width: 30px;
@@ -200,13 +229,23 @@
       font-size: 10px;
     }
 
+<<<<<<< HEAD
   } 
   
  @media only screen and (mad-width: 1300px){
+=======
+  } */
+
+/* @media only screen and (mad-width: 1300px){
+>>>>>>> development
     .taco-detail-container img{
       width: 100px;
       height: auto;
     }
+<<<<<<< HEAD
   }  */
   
 
+=======
+  } */
+>>>>>>> development

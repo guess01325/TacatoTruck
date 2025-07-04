@@ -5,7 +5,12 @@ import express from 'express'
 import cors from 'cors'
 import logger from 'morgan'
 
+<<<<<<< HEAD
 // const uri = process.env.MONGODB_URI;
+=======
+const uri = process.env.MONGODB_URI;
+
+>>>>>>> development
 const app = express()
 const PORT = process.env.PORT || 3000
 
