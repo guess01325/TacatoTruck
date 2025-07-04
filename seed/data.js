@@ -48,7 +48,7 @@ const insertData = async () => {
     {
       name: "Barbacoa Short Rib TaCato",
       imgURL:
-        "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fonlymeat.net%2Fwp-content%2Fuploads%2F2019%2F12%2Ftai-s-captures-JiRSy0GfqPA-unsplash-1024x683.jpg&f=1&nofb=1",
+        "https://cafedelites.com/wp-content/uploads/2016/06/Slow-Cooker-Barbacoa-Beef-Rib-Tacos-2.jpg",
       price: "$3.95",
       ingredients: [
         "Cheese",
@@ -106,7 +106,7 @@ const insertData = async () => {
     {
       name: "Bacon and Queso Breakfast TaCato",
       imgURL:
-        "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fucarecdn.com%2F1304e103-315b-4677-8ef6-bbfc5a64e87f%2F-%2Fcrop%2F1829x1359%2F219%2C0%2F-%2Fresize%2F912x678%2F&f=1&nofb=1",
+        "https://life-in-the-lofthouse.com/wp-content/uploads/2016/12/Breakfast-BaconQueso-Tacos5.jpg",
       price: "$3.25",
       ingredients: [
         "Cheese",
@@ -119,7 +119,7 @@ const insertData = async () => {
     {
       name: "Breakfast TaCato",
       imgURL:
-        "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmedia.gettyimages.com%2Fphotos%2Fbreakfast-tacos-picture-id1225274249&f=1&nofb=1",
+        "https://www.allrecipes.com/thmb/KSq0ft2FtUzTblqe95oNpdqfFCA=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/4520890-a9508163bf7243a48d3d5baf2e391cd7.jpg",
       price: "$2.50",
       ingredients: [
         "Cheese",
@@ -192,7 +192,7 @@ const insertData = async () => {
     },
     {
       name: "The 9 lives",
-      imgURL: `https://scontent-lax3-2.xx.fbcdn.net/v/t1.6435-9/66440312_880132779024177_4777095714486353920_n.jpg?_nc_cat=101&ccb=1-5&_nc_sid=9267fe&_nc_ohc=3Cv73wD9VlMAX-11fqO&_nc_ht=scontent-lax3-2.xx&oh=281aa1f4745c7443139d60c083c99b49&oe=61662C89`,
+      imgURL: `https://img.taste.com.au/LJJGcKfB/w643-h428-cfill-q90/taste/2024/02/quick-weeknight-tuna-tacos-195396-1.jpg`,
       price: "$10.00",
       ingredients: [
         "Vanilla Ice Cream",
@@ -217,7 +217,7 @@ const insertData = async () => {
     {
       name: "Cat Delight",
       imgURL:
-        "https://res.cloudinary.com/otisg/image/upload/v1631707242/ShrimpTaco_ok62kg.jpg",
+        "https://cdn77-s3.lazycatkitchen.com/wp-content/uploads/2023/09/vegan-tacos-close-up-800x1200.jpg",
       price: "$3.99",
       ingredients: [
         "Shrimp",
