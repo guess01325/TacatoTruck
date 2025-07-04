@@ -1,3 +1,6 @@
+import dotenv from 'dotenv'
+dotenv.config()
+
 import db from './db/connection.js'
 import routes from './routes/index.js'
 
@@ -5,12 +8,6 @@ import express from 'express'
 import cors from 'cors'
 import logger from 'morgan'
 
-<<<<<<< HEAD
-// const uri = process.env.MONGODB_URI;
-=======
-const uri = process.env.MONGODB_URI;
-
->>>>>>> development
 const app = express()
 const PORT = process.env.PORT || 3000
 
@@ -25,5 +22,5 @@ db.on('connected', () => {
   app.listen(PORT, () => 
     process.env.NODE_ENV === 'production'
       ? console.log(`Express server running in production on port ${PORT}\n\n`) 
-        : console.log(`Express server running in development on: http://localhost:${PORT}`))
+      : console.log(`Express server running in development on: http://localhost:${PORT}`))
 })
