@@ -7,21 +7,20 @@ import { makeStyles } from "@material-ui/core/styles";
 const useStylesGrid = makeStyles((theme) => ({
   gridRoot: {
     flexGrow: 1,
-    margin: 32,
+    padding: theme.spacing(2),
   },
   gridOurMission: {
-    width: "50%",
+    flex: 1,
+    minWidth: 300,
     textAlign: "justify",
-    alignContent: "center",
-    minWidth: "300px",
   },
   gridMissionTitle: {
     textAlign: "center",
   },
   carousel: {
-    width: "50%",
+    flex: 1,
+    minWidth: 300,
     textAlign: "center",
-    minWidth: "300px",
   },
 }));
 
