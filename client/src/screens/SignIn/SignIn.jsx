@@ -2,11 +2,9 @@ import "./SignIn.css";
 import { useState } from "react";
 import { signIn } from "../../services/users";
 import { useHistory } from "react-router-dom";
-import Layout from "../../components/Layout/Layout";
 import Button from "@material-ui/core/Button";
 import Box from "@material-ui/core/Box";
 import Container from "@material-ui/core/Box";
-
 
 function SignIn(props) {
   const history = useHistory();
@@ -52,7 +50,6 @@ function SignIn(props) {
         <Button
           type="submit"
           className={toggleForm}
-          type="submit"
           fullWidth
           variant="contained"
           sx={{ mt: 3, mb: 2 }}
@@ -76,45 +73,42 @@ function SignIn(props) {
   };
 
   return (
-    <Layout user={props.user}>
-      <Container>
-        <div className="outterContainer">
-          <div className="formSignInContainer">
-            <h1 className="signInLabel">Sign In</h1>
-            <form onSubmit={onSignIn}>
-              <div className="signInEmail">
-                <label>Email</label>
-                <input
-                  required
-                  type="text"
-                  name="email"
-                  value={email}
-                  placeholder="Enter Email"
-                  onChange={handleChange}
-                />
-              </div>
-              <div className="signInPw">
-                <label>Password</label>
-                <input
-                  required
-                  name="password"
-                  value={password}
-                  type="password"
-                  placeholder="Password"
-                  onChange={handleChange}
-                />
-              </div>
-
-              {renderError()}
-            </form>
-          </div>
-            <img
-              src="https://res.cloudinary.com/dy6xpqkkj/image/upload/v1631547003/Tactato%20Truck/istockphoto-833450608-612x612-removebg-preview_ms3oez.png"
-              alt="cat"
-            />
+    <Container>
+      <div className="outterContainer">
+        <div className="formSignInContainer">
+          <h1 className="signInLabel">Sign In</h1>
+          <form onSubmit={onSignIn}>
+            <div className="signInEmail">
+              <label>Email</label>
+              <input
+                required
+                type="text"
+                name="email"
+                value={email}
+                placeholder="Enter Email"
+                onChange={handleChange}
+              />
+            </div>
+            <div className="signInPw">
+              <label>Password</label>
+              <input
+                required
+                name="password"
+                value={password}
+                type="password"
+                placeholder="Password"
+                onChange={handleChange}
+              />
+            </div>
+            {renderError()}
+          </form>
         </div>
-      </Container>
-    </Layout>
+        <img
+          src="https://res.cloudinary.com/dy6xpqkkj/image/upload/v1631547003/Tactato%20Truck/istockphoto-833450608-612x612-removebg-preview_ms3oez.png"
+          alt="cat"
+        />
+      </div>
+    </Container>
   );
 }
 

@@ -3,11 +3,9 @@ import { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { signUp } from "../../services/users";
 import { Link } from "react-router-dom";
-import Layout from "../../components/Layout/Layout";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
-import Box from "@material-ui/core/Box";
-import Container from "@material-ui/core/Box";
+import Container from "@material-ui/core/Container";
 
 function SignUp(props) {
   const history = useHistory();
@@ -26,6 +24,8 @@ function SignUp(props) {
       ...form,
       [event.target.name]: event.target.value,
     });
+
+  const { username, email, password, passwordConfirmation } = form;
 
   const onSignUp = async (event) => {
     event.preventDefault();
@@ -50,12 +50,9 @@ function SignUp(props) {
   };
 
   const renderError = () => {
-    const toggleForm = form.isError ? "danger" : "";
     if (form.isError) {
       return (
         <Button
-          type="submit"
-          className={toggleForm}
           type="submit"
           fullWidth
           variant="contained"
@@ -67,8 +64,6 @@ function SignUp(props) {
     } else if (password !== passwordConfirmation) {
       return (
         <Button
-          type="submit"
-          className={toggleForm}
           type="submit"
           fullWidth
           variant="contained"
@@ -109,63 +104,59 @@ function SignUp(props) {
     );
   }
 
-  const { username, email, password, passwordConfirmation } = form;
-
   return (
-    <Layout user={props.user}>
-      <Container >
-        <div className="outterFormSignUpContainer">
-          <div className="formSignUpContainer">
-            <h3>Sign Up</h3>
-            <form onSubmit={onSignUp}>
-              <div className="username">
-                <label>Username</label>
-                <input
-                  required
-                  type="text"
-                  name="username"
-                  value={username}
-                  placeholder="Enter username"
-                  onChange={handleChange}
-                />
-              </div>
-              <label>Email address</label>
+    <Container>
+      <div className="outterFormSignUpContainer">
+        <div className="formSignUpContainer">
+          <h3>Sign Up</h3>
+          <form onSubmit={onSignUp}>
+            <div className="username">
+              <label>Username</label>
               <input
                 required
-                type="email"
-                name="email"
-                value={email}
-                placeholder="Enter email"
+                type="text"
+                name="username"
+                value={username}
+                placeholder="Enter username"
                 onChange={handleChange}
               />
-              <label>Password</label>
-              <input
-                required
-                name="password"
-                value={password}
-                type="password"
-                placeholder="Password"
-                onChange={handleChange}
-              />
-              <label>Password Confirmation</label>
-              <input
-                required
-                name="passwordConfirmation"
-                value={passwordConfirmation}
-                type="password"
-                placeholder="Confirm Password"
-                onChange={handleChange}
-              />
-              {renderError()}
-            </form>
-          </div>
-          <img
-            src="https://res.cloudinary.com/dy6xpqkkj/image/upload/v1631547003/Tactato%20Truck/istockphoto-833450608-612x612-removebg-preview_ms3oez.png"
-            alt="cat"
-          />
+            </div>
+            <label>Email address</label>
+            <input
+              required
+              type="email"
+              name="email"
+              value={email}
+              placeholder="Enter email"
+              onChange={handleChange}
+            />
+            <label>Password</label>
+            <input
+              required
+              name="password"
+              value={password}
+              type="password"
+              placeholder="Password"
+              onChange={handleChange}
+            />
+            <label>Password Confirmation</label>
+            <input
+              required
+              name="passwordConfirmation"
+              value={passwordConfirmation}
+              type="password"
+              placeholder="Confirm Password"
+              onChange={handleChange}
+            />
+            {renderError()}
+          </form>
         </div>
-      </Container>
-    </Layout>
+        <img
+          src="https://res.cloudinary.com/dy6xpqkkj/image/upload/v1631547003/Tactato%20Truck/istockphoto-833450608-612x612-removebg-preview_ms3oez.png"
+          alt="cat"
+        />
+      </div>
+    </Container>
   );
 }
 

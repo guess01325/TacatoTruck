@@ -1,6 +1,6 @@
 import "./App.css";
 import { useState, useEffect } from "react";
-import { Route, Switch, Redirect } from "react-router-dom"
+import { Route, Switch, Redirect } from "react-router-dom";
 import { verifyUser } from "./services/users";
 import SignUp from "./screens/SignUp/SignUp";
 import SignIn from "./screens/SignIn/SignIn";
@@ -10,11 +10,11 @@ import MenuItemDetailEdit from "./screens/MenuItemDetailEdit/MenuItemDetailEdit"
 import MenuItemCreate from "./screens/MenuItemCreate/MenuItemCreate";
 import Menu from "./screens/Menu/Menu";
 import Home from "./screens/Home/Home";
+import Layout from "./components/Layout/Layout"; // ✅ Make sure this path is correct
 import "@fontsource/roboto";
 import { createTheme } from "@material-ui/core/styles";
 import { ThemeProvider } from "@material-ui/styles";
 import { getUserCart } from "./services/users";
-
 
 const theme = createTheme({
   palette: {
@@ -33,19 +33,18 @@ function App() {
 
   useEffect(() => {
     if (user) {
-      console.log(user.id);
       const fetchCart = async () => {
         const userCartItems = await getUserCart(user.id);
         setCartItems(userCartItems);
       };
       fetchCart();
     }
-  }, []);
+  }, [user]);
 
   useEffect(() => {
     const getUser = async () => {
       const user = await verifyUser();
-      user ? setUser(user) : setUser(null);
+      setUser(user || null);
     };
     getUser();
   }, []);
@@ -55,32 +54,53 @@ function App() {
       <ThemeProvider theme={theme}>
         <Switch>
           <Route exact path="/">
-            <Home user={user} />
+            <Layout user={user}>
+              <Home user={user} />
+            </Layout>
           </Route>
+
           <Route exact path="/menu">
-            <Menu user={user} cartItems={cartItems} setCartItems={setCartItems}/>
+            <Layout user={user}>
+              <Menu user={user} cartItems={cartItems} setCartItems={setCartItems} />
+            </Layout>
           </Route>
+
           <Route exact path="/menu/:id">
+            <Layout user={user}>
+              {user ? (
+                <MenuItemDetailEdit user={user} cartItems={cartItems} setCartItems={setCartItems} />
+              ) : (
+                <MenuItemDetail user={user} cartItems={cartItems} setCartItems={setCartItems} />
+              )}
+            </Layout>
+          </Route>
+
+          <Route path="/create-taco">
             {user ? (
-              <MenuItemDetailEdit user={user} cartItems={cartItems} setCartItems={setCartItems}/>
+              <Layout user={user}>
+                <MenuItemCreate user={user} />
+              </Layout>
             ) : (
-              <MenuItemDetail user={user} cartItems={cartItems} setCartItems={setCartItems}/>
+              <Redirect to="/sign-up" />
             )}
           </Route>
-          <Route path="/create-taco">
-              {user ? <MenuItemCreate user={user} /> 
-            : 
-            <Redirect to="/sign-up" />
-            }
-          </Route>
+
           <Route path="/sign-up">
-            <SignUp setUser={setUser} />
+            <Layout>
+              <SignUp setUser={setUser} />
+            </Layout>
           </Route>
+
           <Route path="/sign-out">
-            <SignOut setUser={setUser} />
+            <Layout>
+              <SignOut setUser={setUser} />
+            </Layout>
           </Route>
+
           <Route path="/sign-in">
-            <SignIn setUser={setUser} />
+            <Layout>
+              <SignIn setUser={setUser} />
+            </Layout>
           </Route>
         </Switch>
       </ThemeProvider>

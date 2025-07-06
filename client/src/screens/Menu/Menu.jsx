@@ -3,7 +3,6 @@ import { getMenuItems } from "../../services/menuItems";
 import "./Menu.css";
 import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
-import Layout from "../../components/Layout/Layout";
 import MenuItem from "../../components/MenuItem/MenuItem.jsx";
 
 const useStylesGrid = makeStyles((theme) => ({
@@ -24,31 +23,27 @@ function Menu(props) {
     };
     fetchMenuItems();
   }, []);
-console.log(menu)
+
   return (
-    <Layout user={props.user}>
-      <div className="items">
-        <div className={classesGrid.gridRoot}>
-          <Grid container spacing={8} justifyContent="center">
-            {menu.map((menuItem, index) => {
-              return (
-                <MenuItem
-                  imgURL={menuItem.imgURL}
-                  name={menuItem.name}
-                  price={menuItem.price}
-                  ingredients={menuItem.ingredients}
-                  id={menuItem._id}
-                  key={index}
-                  cartItems={props.cartItems}
-                  setCartItems={props.setCartItems}
-                  user={props.user}
-                />
-              );
-            })}
-          </Grid>
-        </div>
+    <div className="items">
+      <div className={classesGrid.gridRoot}>
+        <Grid container spacing={8} justifyContent="center">
+          {menu.map((menuItem, index) => (
+            <MenuItem
+              key={index}
+              imgURL={menuItem.imgURL}
+              name={menuItem.name}
+              price={menuItem.price}
+              ingredients={menuItem.ingredients}
+              id={menuItem._id}
+              cartItems={props.cartItems}
+              setCartItems={props.setCartItems}
+              user={props.user}
+            />
+          ))}
+        </Grid>
       </div>
-    </Layout>
+    </div>
   );
 }
 

@@ -1,7 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import "./MenuItemDetail.css";
-import Layout from "../../components/Layout/Layout";
 import { getMenuItem } from "../../services/menuItems";
 import FormGroup from "@material-ui/core/FormGroup";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
@@ -13,84 +12,73 @@ import Container from "@material-ui/core/Box";
 
 import { addUserCartItem } from "../../services/users";
 
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Ranchers&display=swap');
-</style>;
-
 function MenuItemDetail(props) {
-  const [item, setItem] = useState(null);
-  const [isLoaded, setLoaded] = useState(false);
   const { id } = useParams();
+  const [item, setItem] = useState(null);
   const [ingredientsState, setIngredientsState] = useState(
     new Array(allIngredients.length).fill(false)
   );
+
   useEffect(() => {
     const fetchItem = async () => {
       const item = await getMenuItem(id);
       setItem(item);
-      setLoaded(true);
+
+      // Set ingredient checkboxes based on item ingredients
+      const updatedState = new Array(allIngredients.length).fill(false);
+      item.ingredients.forEach((ingredient) => {
+        const index = allIngredients.indexOf(ingredient);
+        if (index !== -1) updatedState[index] = true;
+      });
+      setIngredientsState(updatedState);
     };
+
     fetchItem();
-  }, []);
+  }, [id]);
 
-  if (!isLoaded) {
-    return <h1>Loading...</h1>;
-  }
-
-  item.ingredients.map((ingredient) => {
-    const index = allIngredients.indexOf(ingredient);
-    ingredientsState[index] = true;
-  });
-
-  const addCartItem = async (id) => {
-    await addUserCartItem(props.user.id, id);
+  const addCartItem = async () => {
+    await addUserCartItem(props.user.id, item._id);
   };
 
   const handleOnChange = (position) => {
-    const updatedIngredientState = ingredientsState.map((item, index) =>
-      index === position ? !item : item
+    const updatedState = ingredientsState.map((value, index) =>
+      index === position ? !value : value
     );
-    setIngredientsState(updatedIngredientState);
+    setIngredientsState(updatedState);
   };
+
+  if (!item) {
+    return <h1>Loading...</h1>;
+  }
+
   return (
-    <Layout user={props.user}>
-      <Container component="main" maxWidth="md">
-        <Box
-          sx={{
-            display: "flex",
-            flexDirection: "column",
-          }}
-        >
-          <img className="item-1" src={item.imgURL} alt={item.name} />
-          <div className="name">{item.name}</div>
-          <div className="price">{`${item.price}`}</div>
-        </Box>
-        <div className="info-container">
-          <FormGroup className="check-box" row>
-            {allIngredients.map((ingredient, index) => (
-              <>
-                <FormControlLabel
-                  control={
-                    <Checkbox
-                      checked={ingredientsState[index]}
-                      name={ingredient}
-                    />
-                  }
-                  label={ingredient}
+    <Container component="main" maxWidth="md">
+      <Box sx={{ display: "flex", flexDirection: "column" }}>
+        <img className="item-1" src={item.imgURL} alt={item.name} />
+        <div className="name">{item.name}</div>
+        <div className="price">{item.price}</div>
+      </Box>
+      <div className="info-container">
+        <FormGroup className="check-box" row>
+          {allIngredients.map((ingredient, index) => (
+            <FormControlLabel
+              key={ingredient}
+              control={
+                <Checkbox
+                  checked={ingredientsState[index]}
+                  onChange={() => handleOnChange(index)}
+                  name={ingredient}
                 />
-              </>
-            ))}
-            <Button
-              id="order-button"
-              onClick={() => addCartItem(props.id)}
-              size="medium"
-            >
-              Order Meow
-            </Button>
-          </FormGroup>
-        </div>
-      </Container>
-    </Layout>
+              }
+              label={ingredient}
+            />
+          ))}
+          <Button id="order-button" onClick={addCartItem} size="medium">
+            Order Meow
+          </Button>
+        </FormGroup>
+      </div>
+    </Container>
   );
 }
 
